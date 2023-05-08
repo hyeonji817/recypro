@@ -117,8 +117,8 @@
 	width: 1350px;
 	position: relative;
 	margin: 0 auto;
-	left: 4%;
-	top: 2%;
+	left: 3%;
+	top: -14%;
 	bottom: 22%;
 	padding-bottom: 22%;
 }
