@@ -154,7 +154,7 @@ minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 				%>
 				<form name="ViewModify" id="ViewModify" action="modify.jsp?reviewId=<%=reviewId%>" style="float: right; position: relative; right: 135%;" method="post">		
 						<a>
-						<button id="modify" class="btn btn-info" name="viewvalueforward" value="<%=userId%>" onclick="ClickModify()" style="width: 72px; height: 48px; font-size: 20px; padding-top: 10%; font-weight: bold;">
+						<button id="modify" class="btn btn-default" name="viewvalueforward" value="<%=userId%>" onclick="ClickModify()" style="width: 72px; height: 48px; background-color: #9FFBF4; font-size: 20px; padding-top: 10%; font-weight: bold; color: black;">
 						수정</a>
 				</form>
 				<%

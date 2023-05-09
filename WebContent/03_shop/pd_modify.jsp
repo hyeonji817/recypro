@@ -126,7 +126,7 @@
 					<thead>
 						<tr>
 							<th colspan="2"
-								style="background-color: #eeeeee; text-align: center;">게시판
+								style="background-color: #eeeeee; text-align: center;">상품리뷰
 								글 수정 양식</th>
 						</tr>
 					</thead>
@@ -136,7 +136,7 @@
 								placeholder="글 제목" name="pd_reviewTitle" maxlength="50"
 								value="<%=pd_review.getPd_reviewTitle()%>"></input></td>
 						</tr>
-						<tr>
+						<!-- <tr>
 							<td>
 								<h6>평점 매기기</h6>
 								<fieldset>
@@ -156,15 +156,15 @@
 									<label for="rate5">★</label>
 								</fieldset>
 							</td>
-						</tr>
-						<tr>
+						</tr> -->
+						<!-- <tr>
 							<td>
 								<h5>상품 사진 업로드</h5>
 								<div class="col-sm-6" id="pd_Image" style="position: relative; left: 10%; margin: 0 auto; height: 50px;">
 									<input type="file" name="pd_Image" value="등록" class="pd_Image">
 								</div>
 							</td>
-						</tr>
+						</tr> -->
 						<tr>
 							<td><textarea class="form-control" placeholder="글 내용"
 									name="pd_reviewContent" maxlength="3000" style="height: 350px;"><%=pd_review.getPd_reviewContent()%></textarea></td>

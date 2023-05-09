@@ -239,7 +239,7 @@ B%B7%B0-%EB%B3%84%EC%A0%90-%EA%B8%B0%EB%8A%A5-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%
 									<label for="rate5">★</label>
 								</fieldset>
 							</td>
-						</tr> -->
+						</tr>
 						<tr>
 							<td>
 								<h5>상품 사진 업로드</h5>
@@ -247,7 +247,7 @@ B%B7%B0-%EB%B3%84%EC%A0%90-%EA%B8%B0%EB%8A%A5-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%
 									<input type="file" name="pd_Image" value="등록">
 								</div>
 							</td>
-						</tr>
+						</tr> -->
 						<tr>
 							<td>
 								<textarea class="form-control" placeholder="글 내용" name="pd_reviewContent" maxlength="2048" style="height: 500px; width:1000px;"></textarea>
@@ -257,7 +257,7 @@ B%B7%B0-%EB%B3%84%EC%A0%90-%EA%B8%B0%EB%8A%A5-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%
 				</table>
 				<span class="submit">
 					<input type="submit" class="btn btn-default pull-right" style="background-color: #9FFBF4; color: black; font-weight: bold;" value="글쓰기">
-					<a href="history.back();" style="background-color: #9FFBF4;"><input type="submit" class="btn btn-info pull-right" style="font-weight: bold;" value="뒤로가기"></a>
+					<a href="history.back();" style="background-color: #9FFBF4;"><input type="submit" class="btn btn-default pull-right" style="font-weight: bold; background-color: #9FFBF4;" value="뒤로가기"></a>
 					<%
 						PrintWriter script = response.getWriter();
 					
