@@ -6,6 +6,9 @@
 <%@ page import="product.beans.ProductRepository"%>
 <%@ page import="order.beans.Order"%>
 <%@ page import="order.beans.orderDAO"%>
+
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="java.text.DecimalFormat"%>
 <%@ page import="com.util.DBConn"%>
 <%@ page import="java.sql.ResultSet"%>
 <%@ page import="java.sql.DriverManager"%>
@@ -128,10 +131,34 @@ initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 				<tr>
 					<th><%=rs.getString("shopping_userId") %></th>
 					<th><%=rs.getString("shopping_name") %></th>
+					<% 
+						// 실패작. shoppingInfo_cart 페이지를 참조하여 작성 
+						/** int sum = 0; 	// 장바구니에 담은 상품의 총 합계(갯수)
+						// 세션 속성의 이름이 cartList인 세션 정보 (장바구니에 담긴 물품 목록)를 가져와서 ArrayList에 대입 
+						ArrayList<Product> cartList = (ArrayList<Product>) session.getAttribute("cartList"); 
+						
+						if (cartList == null) {
+							cartList = new ArrayList<Product>();
+						} 
+						
+						for (int i = 0; i < cartList.size(); i++) {
+							Product pd = cartList.get(i); 
+							// 소계 = 가격 * 수량 
+							int total = pd.getUnitprice() * pd.getQuantity();
+							sum = sum + total;
+						*/
+						
+						//while (rs.next()) {
+					%>
 					<th>
 						<a href="Product_write.jsp?id=<%=rs.getString("shopping_productId")%>">
-							<%=rs.getString("shopping_productId") %></th>
+							<%=rs.getString("shopping_productId") %>
 						</a>
+					</th>
+					<%
+					 	// }
+					%>
+
 					<th><%=rs.getString("shopping_date") %></th>
 					<th><%=rs.getString("shopping_country") %></th>
 					<th><%=rs.getString("shopping_addressName") %></th>

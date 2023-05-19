@@ -3,6 +3,9 @@
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="product.beans.Product"%>
 <%@ page import="product.beans.ProductRepository"%>
+<%@ page import="popular_product.beans.popular_product" %>
+<%@ page import="popular_product.beans.popular_pdDAO" %>
+
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@ page import="java.sql.DriverManager"%>
 <%@ page import="java.sql.Connection"%>
@@ -111,8 +114,7 @@
 	bottom: 30%;
 }
 
-
-
+/** 인기상품 목록 */
 .popular {
 	width: 1350px;
 	position: relative;
@@ -123,7 +125,19 @@
 	padding-bottom: 22%;
 }
 
-.popular li {
+#productLists {
+	width: 1200px; 
+	height: 500px;
+	position: relative;  
+}
+
+#product_list {
+	width: 1500px; 
+	height: 500px; 
+	margin: 0 auto; 
+}
+
+/** .popular li {
 	width: 22%;
 	display: inline-block;
 	text-align: center;
@@ -134,37 +148,14 @@
 	position: relative;
 	bottom: 20px;
 }
+*/
 
 ul {
-	list-style: none; /** 목록 리스트 중에서 점을 없애는 스타일 방식 */
+	list-style: none; /** 목록 리스트 중에서 점을 없애는 스타일 방식 */ 
 	padding: 0;
 	margin: 0;
 	width: 100%;
-}
-
-#product_lists li {
-	width: 330px;
-	left: -2%;
-	margin-right: 2%;
-	display: block;
-}
-
-#product_list {
-	width: 1400px;
-	height: 1270px;
-}
-
-#product_list li {
-	width: 100%;
-}
-
-#product_lists {
-	width: 25%;
-	height: 500px;
-	left: 5%;
-	height: 500px;
-	position: relative;
-}
+} 
 
 .sub_explain {
 	color: black;
@@ -173,7 +164,7 @@ ul {
 }
 
 .sub_explain img {
-	width: 160px;
+	width: 220px;
 	border-radius: 30px;
 }
 
@@ -187,7 +178,7 @@ ul {
 .sub {
 	float: left;
 	margin-bottom: 10%;
-	margin-left: 2%;
+	margin-left: 15%;
 	position: absolute;
 }
 
@@ -208,7 +199,7 @@ ul {
 	font-size: 16px;
 	top: 5%;
 	font-weight: 700;
-	left: 15%;
+/* 	left: 15%; */
 	width: 270px;
 	position: relative;
 }
@@ -224,7 +215,7 @@ h6 {
 	width: 90px;
 	font-size: 18px;
 	float: right;
-	margin-right: 8%;
+	margin-right: -7%;
 	position: relative;
 }
 
@@ -240,7 +231,7 @@ h6 {
 	position: relative;
 	margin: 0 auto;
 	height: 250px;
-	top: -220px;
+	top: 180px;
 }
 
 #event li {
@@ -515,170 +506,73 @@ h6 {
 		</div> 
 	</div> -->
 
+	<%
+		// DB에서 전체 상품 목록을 읽어서 가져오기 
+		// popular_pdDAO 객체 생성 
+		popular_pdDAO pdao = new popular_pdDAO(); 
+	
+		// DB에 상품이 있는지 확인 후, 있으면 상품 모두 가져오기. 없으면 가져오지 않기 
+		Connection conn = null;
+		
+		String url = "jdbc:mysql://localhost:3306/recypro?useUnicode=true&serverTimezone=Asia/Seoul";
+		String id = "root";
+		String password = "1234";
+
+		Class.forName("com.mysql.cj.jdbc.Driver"); // 드라이버명
+		conn = DriverManager.getConnection(url, id, password); // 연결 객체생성
+
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String Sql = "select * from popular_product";
+		
+		pstmt = conn.prepareStatement(Sql); // Connection 객체에 쿼리문을 넘겨주고 PrepareStatement를 얻음
+		rs = pstmt.executeQuery(); // 쿼리문 결과 받아옴 
+	%>
 
 	<!-- 인기 상품리스트 -->
 	<div class="popular">
-		<ul>
-			<li>
+		<!-- 변경.ver -->
+		<div class="row" id="productLists" align="center">
+			<%
+				while (rs.next()) {
+			%>
+			<div class="col-md-3" id="product_list">
 				<div class="sub_explain">
-					<a href="Product.jsp"> <img alt="이미지 업로드"
-						src="../img/shop/1_3-1_minimum.jpg" style="width: 70%">
+					<a href="../03_shop/popular_Product.jsp?id=<%=rs.getString("productId")%>">
+						<img alt="이미지 업로드" src="../img/popular/<%=rs.getString("img_name")%>" />
 					</a>
-					<h2>유기농 설거지 비누</h2>
+					<h2><%=rs.getString("pname")%></h2>
 					<h5>
-						<p>
-							매일 사용하는 세제를 바꾸는 것<br> 만으로도 자연과 나와 이웃이 행<br> 복해집니다.
-						</p>
+						<p><%=rs.getString("description")%></p>
 					</h5>
 				</div>
 				<p class="sub">
-					<span class="info_pd"> <a href="Product.jsp"
-						style="font-weight: 700;" class="btn btn-light" id="button_info"
-						role="button"> 상세 정보 &raquo;</a>
-					</span> <span class="sub_menu">
-						<h6 style="font-weight: 700;">3,000원</h6>
-					</span>
-				</p>
-			</li>
-			<!--  -->
-			<li>
-				<div class="sub_explain">
-					<a href="Product.jsp"> <img alt="이미지 업로드"
-						src="../img/shop/4_puppy_pubbag_minimum.png" style="width: 70%">
+					<a href="../03_shop/popular_Product.jsp?id=<%=rs.getString("productId")%>"
+					style="font-weight: 700;" class="btn btn-light" id="button_info"
+					role="button">
+					 상세 정보 &raquo;
 					</a>
-					<h2>강아지 배변봉투 케이스 2종</h2>
-					<h5>
-						<p>
-							나도 반려동물도 편해지는 요긴<br> 한 산책용 파우치! 이제는 휴대<br>용 파우치처럼 편해요!
-						</p>
-					</h5>
-				</div>
-				<p class="sub">
-					<a href="Product.jsp" style="font-weight: 700;"
-						class="btn btn-light" id="button_info" role="button"> 상세 정보
-						&raquo;</a> <span class="sub_menu">
-						<h6 style="font-weight: 700;">9,500원</h6>
+					<span class="sub_menu">
+						<h6 style="font-weight: 700;">
+							<%=dFormat.format(Integer.parseInt(rs.getString("unitprice")))%>원
+						</h6>
 					</span>
 				</p>
-			</li>
-			<li>
-				<div class="sub_explain">
-					<a href="Product.jsp"> <img alt="이미지 업로드"
-						src="../img/shop/rabbit_tumblur_minimum.png" style="width: 70%">
-					</a>
-					<h2>플라스틱 프리챌린지</h2>
-					<h5>
-						<p>
-							귀여운 토끼캐릭터가 그려진 통<br> 통한 텀블러 ☆ 마음이 따뜻해지<br> 는 은은한 파스텔 색상
-						</p>
-					</h5>
-				</div>
-				<p class="sub">
-					<a href="Product.jsp" style="font-weight: 700;"
-						class="btn btn-light" id="button_info" role="button"> 상세 정보
-						&raquo;</a> <span class="sub_menu">
-						<h6 style="font-weight: 700;">8,900원</h6>
-					</span>
-				</p>
-			</li>
-			<li>
-				<div class="sub_explain">
-					<a href="Product.jsp"> <img alt="이미지 업로드"
-						src="../img/shop/finger_snap_minimum.png" style="width: 70%">
-					</a>
-					<h2>손목 터널증후군 운동</h2>
-					<h5>
-						<p>
-							핑거매직 하나로 11가지 다양한<br> 운동을 즐겨보세요! 손목 무리없<br> 이 편하게 운동
-							가능!
-						</p>
-					</h5>
-				</div>
-				<p class="sub">
-					<a href="Product.jsp" style="font-weight: 700;"
-						class="btn btn-light" id="button_info" role="button"> 상세 정보
-						&raquo;</a> <span class="sub_menu">
-						<h6 style="font-weight: 700;">14,940원</h6>
-					</span>
-				</p>
-			</li>
-			<li>
-				<div class="sub_explain">
-					<a href="#"> <img alt="이미지 업로드"
-						src="../img/shop/puppy_gum_minimum.jpg" style="width: 70%" />
-					</a>
-					<h2>강아지 개껌 간식</h2>
-					<h5>
-						<p>
-							국내산 친환경 못난이 채소로 만들어진 <br>강아지 전용 간식이에요~♡
-						</p>
-					</h5>
-				</div>
-				<p class="sub">
-					<a href="#" style="font-weight: 700;" class="btn btn-light"
-						id="button_info" role="button"> 상세 정보&raquo; </a> <span
-						class="sub_menu">
-						<h6 style="font-weight: 700;">29,800원</h6>
-					</span>
-				</p>
-			</li>
-			<li>
-				<div class="sub_explain">
-					<a href="#"> <img alt="이미지 업로드"
-						src="../img/shop/coffee_holder_minimum.png" style="width: 70%" />
-					</a>
-					<h2>드링크백 텀블러 백</h2>
-					<h5>
-						<p>
-							손을 편리하게, 마음은 뿌듯하게! 간지나<br>게 텀블러 가방 들고 다녀보아요
-						</p>
-					</h5>
-				</div>
-				<p class="sub">
-					<a href="#" style="font-weight: 700;" class="btn btn-light"
-						id="button_info" role="button"> 상세 정보&raquo; </a> <span
-						class="sub_menu">
-						<h6 style="font-weight: 700;">3,500원</h6>
-					</span>
-				</p>
-			</li>
-			<li>
-				<div class="sub_explain">
-					<a href="#"> <img alt="이미지 업로드"
-						src="../img/shop/eats_better_minimum.jpg" style="width: 70%" />
-					</a>
-					<h2>비건 티쿠키</h2>
-					<h5>
-						<p>상큼하고 쫄깃한 건크랜베리와 부드러운 코코넛의 조화가 매력적인 비건 티쿠키입니다☆</p>
-					</h5>
-				</div>
-				<p class="sub">
-					<a href="#" style="font-weight: 700;" class="btn btn-light"
-						id="button_info" role="button"> 상세 정보&raquo; </a> <span
-						class="sub_menu">
-						<h6 style="font-weight: 700;">2,700원</h6>
-					</span>
-				</p>
-			</li>
-			<li>
-				<div class="sub_explain">
-					<a href="#"> <img alt="이미지 업로드"
-						src="../img/shop/clean_ball_minimum.jpg" style="width: 70%" />
-					</a>
-					<h2>제주 시카 클렌징볼</h2>
-					<h5>
-						<p>해조류 유래 성분으로 말랑, 탱탱한 제형의 클렌징볼입니다!</p>
-					</h5>
-				</div>
-				<p class="sub">
-					<a href="#" style="font-weight: 700;" class="btn btn-light"
-						id="button_info" role="button"> 상세 정보&raquo; </a> <span
-						class="sub_menu">
-						<h6 style="font-weight: 700;">15,000원</h6>
-					</span>
-				</p>
-			</li>
-		</ul>
+			</div>
+			<%
+				}
+				if (rs != null)
+					rs.close();
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			%>
+		</div>
+		
+			
+		</div>
+		<!-- 원본 -->
 	</div>
 
 	<!-- 쇼핑 이벤트 레이아웃 -->

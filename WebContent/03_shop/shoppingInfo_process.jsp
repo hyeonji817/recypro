@@ -8,10 +8,13 @@
 <%@ page import="order.beans.Order"%>
 <%@ page import="order.beans.orderDAO"%>
 <%@ page import="product.beans.Product" %>
+<%@ page import="product.beans.ProductRepository" %>
 <%@ page import="user.beans.User"%>
 <%@ page import="user.beans.UserDAO"%>
+
 <%@ page import="java.io.PrintWriter"%>
 <%@ page import="com.util.DBConn"%>
+
 <%@ page import="java.sql.DriverManager"%>
 <%@ page import="java.sql.SQLException"%>
 <%@ page import="java.sql.Connection"%>
@@ -77,17 +80,37 @@
 
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
+	
+		int sum = 0;
+		
+		// 세션 속성의 이름이 cardList인 세션 정보(장바구니에 담긴 물품 목록)를 가져와서 ArrayList에 대입
+		ArrayList<Product> cartList = (ArrayList<Product>) session.getAttribute("cartList");
 
+		/** cart.jsp 파일에서 전체 상품을 삭제하는 deleteCart.jsp에서 session.invalidate()을 호출하게 되면
+			cartList는 null이 되기 때문에 아래와 같은 코드가 반드시 필요함 */
+		if (cartList == null) {
+			cartList = new ArrayList<Product>();
+		}
+
+		for (int i = 0; i < cartList.size(); i++) {
+			Product product1 = cartList.get(i);
+			// 소계 = 가격 * 수량 
+			int total = product1.getUnitprice() * product1.getQuantity();
+			sum = sum + total;
+		}
+		
 		// orderDAO 객체 생성
 		String shopping_userId = request.getParameter("shopping_userId"); // 접속한 사용자 id
-		String shopping_productId = request.getParameter("shopping_productId"); // 상품명
+		//String shopping_productId = request.getParameter("shopping_productId"); // 상품명
+		String shopping_productId = request.getAttribute(product1);
+		
 		String shopping_name = request.getParameter("shopping_name"); // 성명
 		String shopping_date = request.getParameter("shopping_date"); // 배송날짜
 		String shopping_country = request.getParameter("shopping_country"); // 배송국가
 		String shopping_zipCode = request.getParameter("shopping_zipCode"); // 우편번호
 		String shopping_addressName = request.getParameter("shopping_addressName"); // 배송지
 
-		System.out.println(shopping_productId);
+		// System.out.println(shopping_productId);
 
 		
 		// 주문정보 처리과정 (orderDAO)  

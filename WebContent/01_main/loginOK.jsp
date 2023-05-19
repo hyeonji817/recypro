@@ -1,5 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="product.beans.Product"%>
+<%@ page import="product.beans.ProductRepository"%>
+<%@ page import="popular_product.beans.popular_product" %>
+<%@ page import="popular_product.beans.popular_pdDAO" %>
+
 <%@ page trimDirectiveWhitespaces="true"%>
+<%@ page import="java.sql.DriverManager"%>
+<%@ page import="java.sql.Connection"%>
+<%@ page import="java.sql.ResultSet"%>
+<%@ page import="java.sql.PreparedStatement"%>
+<%@ page import="java.text.DecimalFormat"%>
+<%
+	request.setCharacterEncoding("UTF-8");
+	DecimalFormat dFormat = new DecimalFormat("###,###"); // 숫자 천 단위로 구분 표시
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -131,11 +146,24 @@
 	position: relative;
 	margin: 0 auto; 
 	left: 1%;
+	top: -14%; 
 	bottom: 22%;
-/* 	padding-bottom: 40%; */
+ 	padding-bottom: 22%; 
 }
 
-.popular li {
+#productLists {
+	width: 1200px; 
+	height: 500px;
+	position: relative;  
+}
+
+#product_list {
+	width: 1500px; 
+	height: 500px; 
+	margin: 0 auto; 
+}
+
+/** .popular li {
 	width: 22%;
 	display: inline-block;
 	text-align: center;
@@ -144,14 +172,6 @@
 .popular li:nth-child(8) {
 	position: relative;
 	bottom: 20px;
-}
-
-ul {
-	list-style: none; /** 목록 리스트 중에서 점을 없애는 스타일 방식 */
-	padding: 0;
-	margin: 0;
-	margin-top: 20%;
-	width: 100%;
 }
 
 #product_lists li {
@@ -176,6 +196,14 @@ ul {
 	left: 5%;
 	height: 500px;
 	position: relative;
+} */
+
+ul {
+	list-style: none; /** 목록 리스트 중에서 점을 없애는 스타일 방식 */ 
+	padding: 0;
+	margin: 0;
+	margin-top: 20%;
+	width: 100%;
 }
 
 .sub_explain {
@@ -186,7 +214,7 @@ ul {
 }
 
 .sub_explain img {
-	width: 160px;
+	width: 220px;
 	border-radius: 30px;
 }
 
@@ -201,7 +229,7 @@ ul {
 	float: left;
 	margin-bottom: 10%;
 	margin-left: 32%;
-	position: relative;
+	position: absolute;
 }
 
 .info_pd a {
@@ -221,7 +249,7 @@ ul {
 	font-size: 16px;
 	top: 5%;
 	font-weight: 700;
-	left: 15%;
+/* 	left: 15%; */
 	width: 270px;
 	position: relative;
 }
@@ -235,12 +263,12 @@ ul {
 h6 {
 	top: 2%;
 	width: 90px;
-	right: 2%;
-	left: 17%;
+	margin-right: -17%;
+	left: 12%;
 	font-size: 18px;
 	float: right;
 	position: relative;
-	margin-top: 2%;
+/* 	margin-top: 2%; */
 }
 
 .btn btn-light {
@@ -255,7 +283,7 @@ h6 {
 	width: 1700px;
 	height: 250px;
 	margin: 0 auto;
-	top: -450px;
+	top: -22%;
 }
 
 #event li {
@@ -524,9 +552,72 @@ h6 {
   		</div>  
 	</div> -->
 	
+	<%
+			// DB에서 전체 상품 목록을 읽어서 가져오기 
+			// popular_pdDAO 객체 생성 
+			popular_pdDAO pdao = new popular_pdDAO(); 
+		
+			// DB에 상품이 있는지 확인 후, 있으면 상품 모두 가져오기. 없으면 가져오지 않기 
+			Connection conn = null;
+			
+			String url = "jdbc:mysql://localhost:3306/recypro?useUnicode=true&serverTimezone=Asia/Seoul";
+			String id = "root";
+			String password = "1234";
+
+			Class.forName("com.mysql.cj.jdbc.Driver"); // 드라이버명
+			conn = DriverManager.getConnection(url, id, password); // 연결 객체생성
+
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			String Sql = "select * from popular_product";
+			
+			pstmt = conn.prepareStatement(Sql); // Connection 객체에 쿼리문을 넘겨주고 PrepareStatement를 얻음
+			rs = pstmt.executeQuery(); // 쿼리문 결과 받아옴 
+	%>
+	
 	<!-- 인기 상품리스트 -->
 	<div class="popular">
-		<ul>
+		<!-- 변경.ver -->
+		<div class="row" id="productLists" align="center">
+			<%
+				while (rs.next()) {
+			%>
+			<div class="col-md-3" id="product_list">
+				<div class="sub_explain">
+					<a href="../03_shop/popular_Product.jsp?id=<%=rs.getString("productId")%>">
+						<img alt="이미지 업로드" src="../img/popular/<%=rs.getString("img_name")%>" />
+					</a>
+					<h2><%=rs.getString("pname")%></h2>
+					<h5>
+						<p><%=rs.getString("description")%></p>
+					</h5>
+				</div>
+				<p class="sub">
+					<a href="../03_shop/popular_Product.jsp?id=<%=rs.getString("productId")%>"
+					style="font-weight: 700;" class="btn btn-light" id="button_info"
+					role="button">
+					 상세 정보 &raquo;
+					</a>
+					<span class="sub_menu">
+						<h6 style="font-weight: 700;">
+							<%=dFormat.format(Integer.parseInt(rs.getString("unitprice")))%>원
+						</h6>
+					</span>
+				</p>
+			</div>
+			<%
+				}
+				if (rs != null)
+					rs.close();
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			%>
+		</div>
+	
+		<!-- 원본 -->
+		<!-- <ul>
 			<li>
 				<div class="sub_explain">
 					<a href="Product.jsp"> <img alt="이미지 업로드"
@@ -548,7 +639,6 @@ h6 {
 					</span>
 				</p>
 			</li>
-			<!--  -->
 			<li>
 				<div class="sub_explain">
 					<a href="Product.jsp"> <img alt="이미지 업로드"
@@ -686,7 +776,7 @@ h6 {
 					</span>
 				</p>
 			</li>
-		</ul>
+		</ul> -->
 	</div>
 	
 	<!-- 쇼핑 이벤트 레이아웃 -->

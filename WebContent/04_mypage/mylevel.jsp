@@ -77,6 +77,7 @@
 	float: left;
 	width: 250px;
 	position: relative;
+	left: 1%;
 	top: 3%;
 	min-height: 480px;
 	margin-bottom: 10%;
