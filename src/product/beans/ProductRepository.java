@@ -2,12 +2,16 @@ package product.beans;
 // 출처좌표 : https://kjh95.tistory.com/285?category=941468 (이미지 첨부)
 // 출처좌표2 : https://kjh95.tistory.com/260?category=941468
 // dao -> 싱글톤 패턴 적용
+// 출처좌표3 (검색기능 메소드 구현) : https://wogus789789.tistory.com/167
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
+
 import product.beans.Product;
 
 public class ProductRepository {	
@@ -134,41 +138,36 @@ public class ProductRepository {
 		listOfProducts.add(product);
 	}
 	
-	// 상품 수 카운트 (페이징 처리요소)
-//	public int getProductCount() {
-//		
-//	}
-	
-	/** 마이레벨 구현 관련 예시 테스트 */
-	// case 1 
-	/** public int discount(int unitprice, String level) {
-		// seed : 0%, sprout(새싹) : 10%, sapling : 20%, tree : 30%, 
-		// fruit_tree : 40%, fruit : 50%, gold_fruit : 60% 
-		 switch (level) {
-			case "seed" : 
-				this.unitprice = unitprice; 
-				break;
-			case "sprout" : 
-				unitprice -= unitprice * 0.1; 
-				break; 
-			case "sapling" : 
-				unitprice -= unitprice * 0.2; 
-				break;
-			case "tree" : 
-				unitprice -= unitprice * 0.3; 
-				break; 
-			case "fruit_tree" : 
-				unitprice -= unitprice * 0.4; 
-				break;
-			case "fruit" : 
-				unitprice -= unitprice * 0.5; 
-				break; 
-			case "gold_fruit" : 
-				unitprice -= unitprice * 0.6; 
-				break; 
-			default : 
-				break; 
+	// 상품검색 메소드 
+	public List<Product> select(String findStr) { 
+		List<Product> list = new ArrayList<Product>(); 
+		
+		try {
+			conn = getConnection();		// DB 연동 
+			
+			String Sql = "SELECT * FROM product WHERE pname LIKE ?"; 	// 조회할 쿼리문 
+			pstmt = conn.prepareStatement(Sql);
+			pstmt.setString(1,  "%" + findStr + "%");
+			rs = pstmt.executeQuery();
+			
+			while (rs.next()) {
+				Product pd = new Product();
+				pd.setPname(rs.getString("pname"));
+				pd.setUnitprice(rs.getInt("unitprice"));
+				pd.setFilename(rs.getString("filename"));
+				pd.setDescription(rs.getString("description"));
+				
+				list.add(pd);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
-		return unitprice;
-	} */
+		return list;
+	} 
 }

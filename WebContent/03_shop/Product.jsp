@@ -418,7 +418,7 @@
 					<p>
 						<b>재고 수 : </b><%=dFormat.format(rs.getLong("numberOfstock"))%></p>
 					<h4>
-						<b>가격 : <%=dFormat.format(rs.getInt("unitprice"))%>원 
+						<b>가격 : <%=dFormat.format(rs.getInt("unitprice"))%>원 </b>
 					</h4>
 				</div>
 				<p class="button">

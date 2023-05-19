@@ -74,6 +74,7 @@
 	float: left;
 	width: 250px;
 	position: relative;
+	left: 1.5%;
 	top: 3%;
 	min-height: 480px;
 	margin-bottom: 10%;
@@ -474,13 +475,13 @@ input .form-control {
 					</label>
 				</div>
 			</div> -->
-			<div class="form-group">
+			<!-- <div class="form-group">
 				<h5 for="regident_registration_number" class="tap1">주민등록번호</h5>
 				<div class="tap2">
 					<input type="text" name="jumin1" maxlength="6" style="width: 150px;" value="주민등록번호">
 					<input type="text" name="jumin2" maxlength="7" value="주민등록번호 뒷자리"> 
 				</div>
-			</div>
+			</div> -->
 			<div class="form-group">
 				<h5 for="email" class="tap1">이메일</h5>
 				<div class="tap2">

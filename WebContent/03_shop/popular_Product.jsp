@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="popular_product.beans.popular_product" %>
-<%@ page import="popular_product.beans.popular_pdDAO %>
+<%@ page import="popular_product.beans.popular_pdDAO" %>
 <%@ page errorPage="exceptionNoProductId.jsp"%>
 <!-- id값이 유효하지 않으면 에러페이지로 이동 -->
 <%@ page import="java.sql.ResultSet"%>
@@ -390,7 +390,7 @@
 			<div class="col-md-5">
 				<!-- 특정 상품 이미지 -->
 				<span class="pd_img"> 
-					<img alt="사진업로드" src="${pageContext.request.contextPath}/img/shopdetail/<%=rs.getString("img_name")%>" style="width: 100%">
+					<img alt="사진업로드" src="${pageContext.request.contextPath}/img/popular/<%=rs.getString("img_name")%>" style="width: 100%">
 				</span>
 			</div>
 			<div class="col-md-6">
@@ -408,50 +408,48 @@
 					<p>
 						<b>분류 : </b><%=rs.getString("category")%></p>
 					<p>
-						<b>재고 수 : </b><%=dFormat.format(rs.getLong("numberOfstock"))%></p>
+						<b>재고 수 : </b><%=dFormat.format(rs.getLong("numberOfstock"))%>
+					</p>
 					<h4>
-						<b>가격 : <%=dFormat.format(rs.getInt("unitprice"))%>원 
+						<b>가격 : <%=dFormat.format(rs.getInt("unitprice"))%>원 </b>
 					</h4>
 				</div>
 				<p class="button">
 					<!-- 버튼영역 -->
-				<form name="addForm"
-					action="./addCart.jsp?id=<%=rs.getString("productId")%>"
-					method="post">
-					<!-- 상품 주문을 클릭하면 자바스크립트 핸들러 함수 addToCart() 호출 -->
-					<div class="product_bt">
-						<a class="btn btn-default btn-lg" onclick="addToCart()"
-							style="background-color: #b6f5f5; margin-right: 1%;"> <span
-							class="cart_into">장바구니 담기 </span>
-						</a> <a href="Products.jsp" class="btn btn-default btn-lg"
-							style="background-color: #b6f5f5; margin-right: 1%;"> <span
-							class="pd_list">상품 목록 </span>
-						</a>
-						<!-- 요 구간에서는 상품페이지 내 상품명을 불러들어야 하니까 앞서 상품데이터가 들어간 객체 파일을 선언하여 인스턴스변수(미니화)를 선언한 후, 그 미니변수 안의 get변수 메소드를 호출한다. -->
-						<a href="Product_Review.jsp" class="btn btn-default btn-lg"
-							style="background-color: #b6f5f5;"> 
-							<span class="review_view">리뷰확인</span>
-						</a>
-					</div>
-				</form>
-				<form name="addForm2"
-					action="./addOrder.jsp?id=<%=rs.getString("productId")%>"
-					method="post">
-					<div class="product_bt" id="order">
-						<a class="btn btn-default btn-lg" onclick="addToOrder()"
-							style="background-color: #b6f5f5; margin-right: 1%;"> 
-							<span class="cart_into">주문하기 </span> <!-- '주문만하기'에서 '주문하기'로 명칭만 바꿈 -->
-						</a> 
-						<a href="#" class="btn btn-default btn-lg" style="background-color: #b6f5f5; margin-right: 1%;"> 
-							<span class="coupon_set">쿠폰적용 </span>
-						</a> 
-						<a href="pd_orderList.jsp" class="btn btn-default btn-lg"
-							style="background-color: #b6f5f5;"> 
-							<span class="pd_orderlist">주문내역 조회 </span>
-						</a>
-					</div>
-				</form>
-			</div>
+					<form name="addForm" action="./addCart.jsp?id=<%=rs.getString("productId")%>" method="post">
+						<!-- 상품 주문을 클릭하면 자바스크립트 핸들러 함수 addToCart() 호출 -->
+						<div class="product_bt">
+							<a class="btn btn-default btn-lg" onclick="addToCart()"
+								style="background-color: #b6f5f5; margin-right: 1%;"> <span
+								class="cart_into">장바구니 담기 </span>
+							</a> 
+							<a href="Products.jsp" class="btn btn-default btn-lg"
+								style="background-color: #b6f5f5; margin-right: 1%;"> 
+								<span class="pd_list">상품 목록 </span>
+							</a>
+							<!-- 요 구간에서는 상품페이지 내 상품명을 불러들어야 하니까 앞서 상품데이터가 들어간 객체 파일을 선언하여 인스턴스변수(미니화)를 선언한 후, 그 미니변수 안의 get변수 메소드를 호출한다. -->
+							<a href="Product_Review.jsp" class="btn btn-default btn-lg"
+								style="background-color: #b6f5f5;"> 
+								<span class="review_view">리뷰확인</span>
+							</a>
+						</div>
+					</form>
+					<form name="addForm2" action="./addOrder.jsp?id=<%=rs.getString("productId")%>" method="post">
+						<div class="product_bt" id="order">
+							<a class="btn btn-default btn-lg" onclick="addToOrder()"
+								style="background-color: #b6f5f5; margin-right: 1%;"> 
+								<span class="cart_into">주문하기 </span> <!-- '주문만하기'에서 '주문하기'로 명칭만 바꿈 -->
+							</a> 
+							<a href="#" class="btn btn-default btn-lg" style="background-color: #b6f5f5; margin-right: 1%;"> 
+								<span class="coupon_set">쿠폰적용 </span>
+							</a> 
+							<a href="pd_orderList.jsp" class="btn btn-default btn-lg"
+								style="background-color: #b6f5f5;"> 
+								<span class="pd_orderlist">주문내역 조회 </span>
+							</a>
+						</div>
+					</form>
+				</div>
 			<%
 				} 
 				if (rs != null)

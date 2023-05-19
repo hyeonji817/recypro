@@ -1,5 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="product.beans.Product"%>
+<%@ page import="product.beans.ProductRepository"%>
+<%@ page import="popular_product.beans.popular_product" %>
+<%@ page import="popular_product.beans.popular_pdDAO" %>
+
 <%@ page trimDirectiveWhitespaces="true"%>
+<%@ page import="java.sql.DriverManager"%>
+<%@ page import="java.sql.Connection"%>
+<%@ page import="java.sql.ResultSet"%>
+<%@ page import="java.sql.PreparedStatement"%>
+<%@ page import="java.text.DecimalFormat"%>
+<%
+	request.setCharacterEncoding("UTF-8");
+	DecimalFormat dFormat = new DecimalFormat("###,###"); // 숫자 천 단위로 구분 표시
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -130,8 +145,10 @@
 	width: 1350px;	/** 반응형 화면 축소 시, 깨짐 방지하려면 명확한 수치의 픽셀 단위길이를 입력해 줘야 함 */
 	position: relative;
 	margin: 0 auto; 
-	left: 1%;
+	left: -4%;
+	top: -14%;
  	bottom: 22%; 
+ 	padding-bottom: 22%;
 }
 
 .popular li {
@@ -161,8 +178,9 @@ ul {
 }
 
 #product_list {
-	width: 1400px;
-	height: 1270px;
+	width: 1500px;
+	height: 500px;
+	margin: 0 auto;
 }
 
 #product_list li {
@@ -180,12 +198,12 @@ ul {
 .sub_explain {
 	color: black;
 	position: relative;
-	right: -22%;
+	right: -25%;
 	width: 330px;
 }
 
 .sub_explain img {
-	width: 160px;
+	width: 220px;
 	border-radius: 30px;
 }
 
@@ -199,7 +217,7 @@ ul {
 .sub {
 	float: left;
 	margin-bottom: 10%;
-	margin-left: 32%;
+	margin-left: 35%;
 	position: relative;
 }
 
@@ -220,7 +238,7 @@ ul {
 	font-size: 16px;
 	top: 5%;
 	font-weight: 700;
-	left: 15%;
+/* 	left: 15%; */
 	width: 270px;
 	position: relative;
 }
@@ -234,12 +252,11 @@ ul {
 h6 {
 	top: 2%;
 	width: 90px;
-	right: 2%;
+	right: 3%;
 	left: 17%;
 	font-size: 18px;
 	float: right;
 	position: relative;
-	margin-top: 2%;
 }
 
 .btn btn-light {
@@ -254,7 +271,7 @@ h6 {
 	width: 1700px;
 	height: 300px;
 	margin: 0 auto;
-	top: -450px;
+	top: -90%;
 }
 
 #event li {
@@ -484,48 +501,73 @@ h6 {
     	</div>
     </div>
     
-    <!-- 시도한 거 4 -->
-    <!-- <div class="content"> 
-		<div class="slides">  
-  			<div class="slide_item">
-  				<img src="../img/shopdetail/1_3-1_minimum.jpg" />
-  				<p class="slide_text">가치솝 비누</p>
-  			</div>  
-  			<div class="slide_item">
-  				<img src="../img/shopdetail/4_puppy_pubbag_minimum.png" />
-  				<p class="slide_text2">애견 풉백 <br> 생분해 리필 </p>
-  			</div>
-  			<div class="slide_item">
-  				<img src="../img/shopdetail/rabbit_tumblur_minimum.png" />
-  				<p class="slide_text">토끼 텀블러</p>
-  			</div>
-  			<div class="slide_item">
-  				<img src="../img/shopdetail/finger_snap_minimum.png" />
-  				<p class="slide_text">손운동 기구
-  			</div>
-		</div> -->
+    <%
+		// DB에서 전체 상품 목록을 읽어서 가져오기 
+		// popular_pdDAO 객체 생성 
+		popular_pdDAO pdao = new popular_pdDAO(); 
+	
+		// DB에 상품이 있는지 확인 후, 있으면 상품 모두 가져오기. 없으면 가져오지 않기 
+		Connection conn = null;
 		
-<!-- 		<span class="nextButton">▶</span>  다음 버튼 -->
-<!-- 		<span class="prevButton">◀</span>   이전 버튼 -->
-  		<!-- <div class="Thumbnail">  
- 			<div class="thumbnail_item">
- 				<img src="../img/shop/1_3-1_minimum.jpg" />
- 			</div>   
-  			<div class="thumbnail_item">
-  				<img src="../img/shop/4_puppy_pubbag_minimum.png" />
-  			</div>
-  			<div class="thumbnail_item">
-  				<img src="../img/shop/rabbit_tumblur_minimum.png" />
-  			</div>
-  			<div class="thumbnail_item">
-  				<img src="../img/shop/finger_snap_minimum.png" />
-  			</div>
-  		</div> 
-	</div> -->
+		String url = "jdbc:mysql://localhost:3306/recypro?useUnicode=true&serverTimezone=Asia/Seoul";
+		String Id = "root";
+		String password = "1234";
+
+		Class.forName("com.mysql.cj.jdbc.Driver"); // 드라이버명
+		conn = DriverManager.getConnection(url, Id, password); // 연결 객체생성
+
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String Sql = "select * from popular_product";
+		
+		pstmt = conn.prepareStatement(Sql); // Connection 객체에 쿼리문을 넘겨주고 PrepareStatement를 얻음
+		rs = pstmt.executeQuery(); // 쿼리문 결과 받아옴 
+	%>
 	
 	<!-- 인기 상품리스트 -->
 	<div class="popular">
-		<ul>
+		<!-- 변경.ver -->
+		<div class="row" id="productLists" align="center">
+			<%
+				while (rs.next()) {
+			%>
+			<div class="col-md-3" id="product_list">
+				<div class="sub_explain">
+					<a href="../03_shop/popular_Product.jsp?id=<%=rs.getString("productId")%>">
+						<img alt="이미지 업로드" src="../img/popular/<%=rs.getString("img_name")%>" />
+					</a>
+					<h2><%=rs.getString("pname")%></h2>
+					<h5>
+						<p><%=rs.getString("description")%></p>
+					</h5>
+				</div>
+				<p class="sub">
+					<a href="../03_shop/popular_Product.jsp?id=<%=rs.getString("productId")%>"
+					style="font-weight: 700;" class="btn btn-light" id="button_info"
+					role="button">
+					 상세 정보 &raquo;
+					</a>
+					<span class="sub_menu">
+						<h6 style="font-weight: 700;">
+							<%=dFormat.format(Integer.parseInt(rs.getString("unitprice")))%>원
+						</h6>
+					</span>
+				</p>
+			</div>
+			<%
+				}
+				if (rs != null)
+					rs.close();
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			%>
+		</div>
+	
+	
+		<!-- 원본 -->
+		<!-- <ul>
 			<li>
 				<div class="sub_explain">
 					<a href="Product.jsp"> <img alt="이미지 업로드"
@@ -547,7 +589,6 @@ h6 {
 					</span>
 				</p>
 			</li>
-			<!--  -->
 			<li>
 				<div class="sub_explain">
 					<a href="Product.jsp"> <img alt="이미지 업로드"
@@ -685,7 +726,8 @@ h6 {
 					</span>
 				</p>
 			</li>
-		</ul>
+		</ul> -->
+		
 	</div>
 	
 	<!-- 쇼핑 이벤트 레이아웃 -->
