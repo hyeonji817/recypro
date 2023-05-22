@@ -30,11 +30,12 @@
 
 <!-- jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="<c:url value='/js/searchProducts.js'/>" charset="utf-8"></script>
+<script src="../js/searchProducts.js'/>" charset="utf-8"></script>
 
 <!-- bootstrap -->
 <link rel="stylesheet" href="../css/bootstrap.css" />
 <link rel="stylesheet" href="../css/ie10.css" />
+<link rel="stylesheet" href="../css/searchProduct.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap.min.css" /> 
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
@@ -215,11 +216,11 @@
 						+ 			"<img src='../img/shopdetail/"+img0+"'width='400' height='400'>";
 						+			"<img src='../img/shopdetail/"+img1+"'width='400' height='400'>";
 						+		"</div>";
-						+		"<c:if test='${"+num+" ne"+pick1+"}'>";
+						+		"<c:if test='${"+num+" ne "+pick1+"}'>";
 						+		"<span style='background-color:#ff80bf; line-height: 27px; border-radius: 10px;'><font color='#ffffff' size='2'>";
 						+			pick1 + "</font></span>";
 						+		"</c:if>";
-						+		"<c:if test='${"+num+" ne"+pick2+"}'";
+						+		"<c:if test='${"+num+" ne "+pick2+"}'";
 						+     	"<span style='background-color:#d456dc; line-height: 27px; border-radius: 10px;'><font color='#ffffff' size='2'>";
 						+		pick2 + "</font></span>"
 						+	  	"</c:if>"

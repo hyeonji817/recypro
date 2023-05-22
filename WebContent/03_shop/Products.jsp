@@ -170,7 +170,12 @@ a:visited {
     -webkit-transition: all 0.7s ease 0s;
 }
 
-.clue #clude_search {
+#search51:focus {
+	width: 200px; 
+	outline: 0;
+}
+
+/** .clue #clude_search {
 	background-image: url(../img/recypro_clipping.png);
 	background-position: 0px 0px;
 	background-repeat: no-repeat;
@@ -181,7 +186,7 @@ a:visited {
 	margin: auto; 
 	top: -83% !important;
 	text-indent: -10000px;
-}
+} */
 
 .submenu a {
 	font-weight: 700; 
@@ -379,16 +384,16 @@ h6 {
 					<input type="hidden" name="search" value="select">
 				</form>
 			</div>
-		</div>
-	</div> -->
+		</div> -->
+	</div> 
 	
 	<!-- 검색창 (리뉴얼) -->
-	<div class="search_bar" style="margin-left:33%; top:-10%; position: relative;">
+	<!-- <div class="search_bar" style="margin-left:71%; top:-12%; position: relative;">
 		<form method="post" action="searchProducts.jsp" id="searchbox5">
 			<input id="search51" name="keyword" type="text" size="40" placeholder="상품명 찾기" value="${keyword}" />
 		</form>
-	</div>
-
+	</div> -->
+	
 	<div class="container">
 		<div class="row" id="product_list" align="center">
 			<%

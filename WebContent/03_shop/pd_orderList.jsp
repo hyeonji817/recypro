@@ -125,40 +125,31 @@ initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 			
 			<!-- 다음 행으로 이동하여 결과값 출력할 때까지 반복적으로 형성 -->
 			<%
+				ArrayList<Product> cartList3 = (ArrayList<Product>) session.getAttribute("cartList");
+			
+				System.out.println("cartList3 확인");
+				System.out.println(cartList3);
+				
 				while (rs.next()) {
+					// for (int i=0; i<cartList3.size(); i++) {
+						// Product product2 = cartList3.get(i);
 			%>
 			<tbody>
 				<tr>
 					<th><%=rs.getString("shopping_userId") %></th>
 					<th><%=rs.getString("shopping_name") %></th>
-					<% 
-						// 실패작. shoppingInfo_cart 페이지를 참조하여 작성 
-						/** int sum = 0; 	// 장바구니에 담은 상품의 총 합계(갯수)
-						// 세션 속성의 이름이 cartList인 세션 정보 (장바구니에 담긴 물품 목록)를 가져와서 ArrayList에 대입 
-						ArrayList<Product> cartList = (ArrayList<Product>) session.getAttribute("cartList"); 
-						
-						if (cartList == null) {
-							cartList = new ArrayList<Product>();
-						} 
-						
-						for (int i = 0; i < cartList.size(); i++) {
-							Product pd = cartList.get(i); 
-							// 소계 = 가격 * 수량 
-							int total = pd.getUnitprice() * pd.getQuantity();
-							sum = sum + total;
-						*/
-						
-						//while (rs.next()) {
-					%>
+					<% // for (int i=0; i<cartList3.size(); i++) { %>
 					<th>
+					<% //for (int i=0; i<cartList3.size(); i++) { %>
 						<a href="Product_write.jsp?id=<%=rs.getString("shopping_productId")%>">
-							<%=rs.getString("shopping_productId") %>
+							<%-- String cart_ProductId = rs.getString("shopping_productId"); --%>
+							
+							<%=rs.getString("shopping_productId") %>							
+							<%--=rs.getString("cartList3[i]") --%>
 						</a>
+					<% //} %>
 					</th>
-					<%
-					 	// }
-					%>
-
+					<%  //} %>
 					<th><%=rs.getString("shopping_date") %></th>
 					<th><%=rs.getString("shopping_country") %></th>
 					<th><%=rs.getString("shopping_addressName") %></th>
@@ -177,8 +168,9 @@ initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 				</tr>
 			</tbody>
 			<%
-				}
-			}
+					//  }	// for문
+				}	// while문
+			}	// try 구문
 			catch (SQLException e) {
 				e.printStackTrace();
 				System.out.println("값을 불러들이지 못함");
