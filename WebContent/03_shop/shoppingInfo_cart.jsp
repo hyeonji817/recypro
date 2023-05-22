@@ -286,18 +286,18 @@
 					sum = sum + total;
 			%>
 
-			<!-- 상품명 -->
-			<div class="form-group row">
-				<label class="col-sm-2">상품명</label>
-				<div class="col-sm-3" name="shopping_productId">
-					<input type="text" name="shopping_productId" class="form-control"
-						value="<%=product1.getProductId()%>-<%=product1.getPname()%>"
-						placeholer="상품명" readonly />
-					<!-- 					요 부분에서 DB 연동되냐 안 되냐 결정되는 구간인듯 -->
-					<!-- readonly : 읽기전용 -->
-				</div>
-			</div>
-			<%
+					<!-- 상품명 -->
+					<div class="form-group row">
+						<label class="col-sm-2">상품명</label>
+						<div class="col-sm-3" name="shopping_productId">
+							<input type="text" name="shopping_productId" class="form-control"
+								value="<%=product1.getProductId()%>-<%=product1.getPname()%>"
+								placeholer="상품명" readonly />
+							<!-- 					요 부분에서 DB 연동되냐 안 되냐 결정되는 구간인듯 -->
+							<!-- readonly : 읽기전용 -->
+						</div>
+					</div>
+					<%
 				}
 			%>
 
@@ -360,6 +360,7 @@
 					</div>
 				</div>
 			</div>
+			<input type="hidden" name="cartlist_transfer" value="<%=cartList%>" /> 
 		</form>
 	</div>
 </body>

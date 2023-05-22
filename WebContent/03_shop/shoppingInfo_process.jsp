@@ -77,11 +77,14 @@
 		String password = "1234"; // db에 입력할 db전용 패스워드 
 		Class.forName("com.mysql.cj.jdbc.Driver"); // 드라이버명, 자바코드와 db를 연결할 드라이버 (연결다리)
 		conn = DriverManager.getConnection(url, userid, password); // 연결 객체생성
-
+		
+		/** 추가 내용 (102번째 줄까지) */
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 	
 		int sum = 0;
+		int total = 0;
+		Product product1 = new Product();		// 첨부할 product 구현체 객체 인스턴스 선언
 		
 		// 세션 속성의 이름이 cardList인 세션 정보(장바구니에 담긴 물품 목록)를 가져와서 ArrayList에 대입
 		ArrayList<Product> cartList = (ArrayList<Product>) session.getAttribute("cartList");
@@ -93,16 +96,21 @@
 		}
 
 		for (int i = 0; i < cartList.size(); i++) {
-			Product product1 = cartList.get(i);
+			product1 = cartList.get(i);
 			// 소계 = 가격 * 수량 
-			int total = product1.getUnitprice() * product1.getQuantity();
+			total = product1.getUnitprice() * product1.getQuantity();
 			sum = sum + total;
 		}
 		
+		ArrayList<Product> cartList2 = (ArrayList<Product>) session.getAttribute("cartList");
+		
+		// System.out.println("cartList2 확인");
+		// System.out.println(cartList2);
+		
 		// orderDAO 객체 생성
 		String shopping_userId = request.getParameter("shopping_userId"); // 접속한 사용자 id
-		//String shopping_productId = request.getParameter("shopping_productId"); // 상품명
-		String shopping_productId = request.getAttribute(product1);
+		String shopping_productId = request.getParameter("shopping_productId"); // 상품명
+		// shopping_productId = product1.getProductId();
 		
 		String shopping_name = request.getParameter("shopping_name"); // 성명
 		String shopping_date = request.getParameter("shopping_date"); // 배송날짜
@@ -118,5 +126,6 @@
 		orderDAO.orderhj(shopping_userId, shopping_productId, shopping_name, shopping_date, shopping_country, shopping_zipCode, shopping_addressName);
 		response.sendRedirect("orderConfirmation.jsp"); // orderConfirmation.jsp를 실행시켜 새로운 정보 업데이트
 	%>
+	<input type="hidden" name="cartlist_transfer" value="<%=cartList2%>" />
 </body>
 </html>
