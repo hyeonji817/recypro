@@ -138,12 +138,12 @@ initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 					<th><%=rs.getString("shopping_name") %></th>
 					<th>
 						<a href="Product_write.jsp?id=<%=rs.getString("shopping_productId")%>">
-							<%=rs.getString("shopping_productId") %>
-						<%-- if(cartList3 != null) { --%>
-							<%-- for (int i=0; i<cartList3.size(); i++) { --%>						
-								<%--=rs.getString("shopping_productId") --%>
-							<%-- } --%>
-						<%-- }--%>
+							<%--=rs.getString("shopping_productId") --%>
+						<% if(cartList3 != null) { %>
+							<% for (int i=0; i<cartList3.size(); i++) { %>						
+								<%=rs.getString("shopping_productId") %>
+							<% } %>
+						<% } %>
 						</a>
 					</th>
 					<th><%=rs.getString("shopping_date") %></th>
