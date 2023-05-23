@@ -131,25 +131,21 @@ initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 				System.out.println(cartList3);
 				
 				while (rs.next()) {
-					// for (int i=0; i<cartList3.size(); i++) {
-						// Product product2 = cartList3.get(i);
 			%>
 			<tbody>
 				<tr>
 					<th><%=rs.getString("shopping_userId") %></th>
 					<th><%=rs.getString("shopping_name") %></th>
-					<% // for (int i=0; i<cartList3.size(); i++) { %>
 					<th>
-					<% //for (int i=0; i<cartList3.size(); i++) { %>
 						<a href="Product_write.jsp?id=<%=rs.getString("shopping_productId")%>">
-							<%-- String cart_ProductId = rs.getString("shopping_productId"); --%>
-							
-							<%=rs.getString("shopping_productId") %>							
-							<%--=rs.getString("cartList3[i]") --%>
+							<%=rs.getString("shopping_productId") %>
+						<%-- if(cartList3 != null) { --%>
+							<%-- for (int i=0; i<cartList3.size(); i++) { --%>						
+								<%--=rs.getString("shopping_productId") --%>
+							<%-- } --%>
+						<%-- }--%>
 						</a>
-					<% //} %>
 					</th>
-					<%  //} %>
 					<th><%=rs.getString("shopping_date") %></th>
 					<th><%=rs.getString("shopping_country") %></th>
 					<th><%=rs.getString("shopping_addressName") %></th>

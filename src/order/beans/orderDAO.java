@@ -135,8 +135,10 @@ public class orderDAO {
 			pstmt = conn.prepareStatement(SQL);
 			
 			pstmt.setInt(1, shopping_num);		// 쿼리문 중 첫 번째 물음표에 shopping_num 변수값 대입 
-			pstmt.setString(2, shopping_userId); // 쿼리문 중 두 번째 물음표에 shopping_userId 변수값 대입 
+			pstmt.setString(2, shopping_userId); // 쿼리문 중 두 번째 물음표에 shopping_userId 변수값 대입
+			//for  {
 			pstmt.setString(3, shopping_productId);
+			//}
 			pstmt.setString(4, shopping_name);
 			pstmt.setString(5, shopping_date);
 			pstmt.setString(6, shopping_country);
