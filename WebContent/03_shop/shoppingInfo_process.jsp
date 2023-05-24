@@ -86,7 +86,7 @@
 		int total = 0;
 		Product product1 = new Product();		// 첨부할 product 구현체 객체 인스턴스 선언
 		
-		// 세션 속성의 이름이 cardList인 세션 정보(장바구니에 담긴 물품 목록)를 가져와서 ArrayList에 대입
+		// 세션 속성의 이름이 cartList인 세션 정보(장바구니에 담긴 물품 목록)를 가져와서 ArrayList에 대입
 		ArrayList<Product> cartList = (ArrayList<Product>) session.getAttribute("cartList");
 
 		/** cart.jsp 파일에서 전체 상품을 삭제하는 deleteCart.jsp에서 session.invalidate()을 호출하게 되면
@@ -96,7 +96,7 @@
 		}
 
 		for (int i = 0; i < cartList.size(); i++) {
-			product1 = cartList.get(i);
+			product1 = cartList.get(i);		// 상품 객체에 저장된 데이터들을 배열로 나열 
 			// 소계 = 가격 * 수량 
 			total = product1.getUnitprice() * product1.getQuantity();
 			sum = sum + total;
