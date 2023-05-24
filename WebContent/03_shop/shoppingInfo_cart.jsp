@@ -8,6 +8,7 @@
 <%@ page import="order.beans.orderDAO"%>
 <%@ page import="user.beans.User"%>
 <%@ page import="user.beans.UserDAO"%>
+
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="java.text.DecimalFormat"%>
 <%@ page import="product.beans.Product"%>
@@ -290,7 +291,7 @@
 					<div class="form-group row">
 						<label class="col-sm-2">상품명</label>
 						<div class="col-sm-3" name="shopping_productId">
-							<input type="text" name="shopping_productId" class="form-control"
+							<input type="text" name="shopping_productId" class="form-control" id="shopping_productId"
 								value="<%=product1.getProductId()%>-<%=product1.getPname()%>"
 								placeholer="상품명" readonly />
 							<!-- 					요 부분에서 DB 연동되냐 안 되냐 결정되는 구간인듯 -->
@@ -363,4 +364,14 @@
 			<input type="hidden" name="cartlist_transfer" value="<%=cartList%>" /> 
 		</form>
 	</div>
+	
+	<script type="text/javascript">
+		var valueById = $('#shopping_productId').val();		// id값인 shopping_productId의 태그 요소 내 value 값 가져오기 
+		// var valueById = $('input[name=shopping_productId]').val();	// name 값 기준으로 가져오기 
+	</script>
+	
+	<!-- javascript 영역 -->
+	<script src="../js/jquery.min.js"></script>
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </body>
