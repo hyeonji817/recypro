@@ -1,3 +1,4 @@
+<!-- 출처좌표 1 : https://velog.io/@alicesykim95/JSP-Form (request.getParameter 관련) -->
 <!-- 장바구니 페이지를 클릭했을 때 진행되는 페이지 -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -109,7 +110,7 @@
 		
 		// orderDAO 객체 생성
 		String shopping_userId = request.getParameter("shopping_userId"); // 접속한 사용자 id
-		String shopping_productId = request.getParameter("shopping_productId"); // 상품명
+		String shopping_productId = request.getParameter("shopping_productId"); // 상품명, 이전페이지에서 name의 객체의 value를 가져온다. 
 		// shopping_productId = product1.getProductId();
 		
 		String shopping_name = request.getParameter("shopping_name"); // 성명
