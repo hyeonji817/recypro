@@ -140,9 +140,11 @@ initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 						<a href="Product_write.jsp?id=<%=rs.getString("shopping_productId")%>">
 							<%--=rs.getString("shopping_productId") --%>
 						<% if(cartList3 != null) { %>
-							<% for (int i=0; i<cartList3.size(); i++) { %>						
-								<%=rs.getString("shopping_productId") %>
-							<% } %>
+							<%-- for (int i=0; i<cartList3.size(); i++) { --%>			
+								<%-- if (rs.next()) { --%>		
+									<%=rs.getString("shopping_productId") %>
+								<%-- } --%>
+							<%-- } --%>
 						<% } %>
 						</a>
 					</th>

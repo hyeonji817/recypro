@@ -6,10 +6,18 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import product.beans.Product;
+import product.beans.ProductRepository;
+import java.util.ArrayList;
+
+import javax.security.auth.message.callback.PrivateKeyCallback.Request;
+import javax.servlet.http.HttpSession;
+
+import com.mysql.cj.Session;
+
 // import com.sun.tools.example.debug.tty.TTYResources;
 
 import order.beans.Order;
-import product.beans.ProductRepository;
 
 public class orderDAO {
 	private static Connection conn; // DB 커넥션 연결 객체
@@ -79,6 +87,13 @@ public class orderDAO {
 	// 주문 데이터 수정페이지
 	public int updateOrder(Order od) { // 테이블명 바뀌어서 고쳐야함 20221021 225200, 안에 컬럼숫자도 달라짐
 		int result = -1;
+		
+		// HttpSession session = Request.getSession();		// 삽질실패 
+		
+		// 세션 속성의 이름이 cardList인 세션 정보(장바구니에 담긴 물품 목록)를 가져와서 ArrayList에 대입
+		// ArrayList<Product> cartList = (String[]) request.getAttribute("cartlist");
+		// ArrayList<Product> cartList = (ArrayList<Product>) session.getAttribute("cartList");
+		
 
 		try {
 			// SQL 구문작성 & pstmt 생성
@@ -136,9 +151,14 @@ public class orderDAO {
 			
 			pstmt.setInt(1, shopping_num);		// 쿼리문 중 첫 번째 물음표에 shopping_num 변수값 대입 
 			pstmt.setString(2, shopping_userId); // 쿼리문 중 두 번째 물음표에 shopping_userId 변수값 대입
-			//for  {
-			pstmt.setString(3, shopping_productId);
-			//}
+			
+		//	if(cartList.size > 0) {
+	//			for(int i=0; i<cartList.size;i++)
+//					{
+			pstmt.setString(3, shopping_productId);	
+					//}
+				//}
+						
 			pstmt.setString(4, shopping_name);
 			pstmt.setString(5, shopping_date);
 			pstmt.setString(6, shopping_country);

@@ -273,6 +273,7 @@
 
 				// 세션 속성의 이름이 cardList인 세션 정보(장바구니에 담긴 물품 목록)를 가져와서 ArrayList에 대입
 				ArrayList<Product> cartList = (ArrayList<Product>) session.getAttribute("cartList");
+				
 
 				/** cart.jsp 파일에서 전체 상품을 삭제하는 deleteCart.jsp에서 session.invalidate()을 호출하게 되면
 					cartList는 null이 되기 때문에 아래와 같은 코드가 반드시 필요함 */
@@ -366,7 +367,10 @@
 	</div>
 	
 	<script type="text/javascript">
-		var valueById = $('#shopping_productId').val();		// id값인 shopping_productId의 태그 요소 내 value 값 가져오기 
+		$(document).ready(function() {
+			$("#shopping_productId").val().submit();	// 앞 페이지(carat.jsp)에서 input 태그 요소의 value 값을 가져오기 위하
+		}); 
+		// var valueById = $('#shopping_productId').val();		// id값인 shopping_productId의 태그 요소 내 value 값 가져오기
 		// var valueById = $('input[name=shopping_productId]').val();	// name 값 기준으로 가져오기 
 	</script>
 	
