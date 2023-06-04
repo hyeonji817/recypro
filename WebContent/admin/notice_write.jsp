@@ -64,7 +64,7 @@
 		
 		if (session.getAttribute("id") != null) {
 			id = (String)session.getAttribute("id"); 
-			pw.println("location.href='../04_mypage/shopping_history.jsp'");
+			pw.println("location.href='../admin/notice_write.jsp'");
 		}
 		
 		if (id == null) {

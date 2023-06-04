@@ -109,7 +109,7 @@ public class noticeDAO {
 	}
 	
 	//  게시글 수에 따라 페이징 처리하기 위함 
-	public boolean nextPage(int pageNumber) {	// 다음 페이지가 없을 경우에 대한 처리 
+	public boolean nextPage(int pageNum) {	// 다음 페이지가 없을 경우에 대한 처리 
 		// 조회된 기준 notice_num으로 오름차순하여 위에 10개만 보여주는 쿼리 
 		String SQL = "SELECT * FROM notice WHERE notice_num < ? AND notice_available = 1 ORDER BY notice_num ASC LIMIT 10"; 
 		
@@ -117,7 +117,7 @@ public class noticeDAO {
 		
 		try {
 			PreparedStatement pmt = conn.prepareStatement(SQL);	// conn 객체를 이용. SQL문장을 실행준비로 만듦 
-			pmt.setInt(1, getNext() - (pageNumber - 1) * 10);
+			pmt.setInt(1, getNext() - (pageNum - 1) * 10);
 			rs = pmt.executeQuery(); 
 			
 			// 다음 버튼을 보여줄지 판단하는 부분 
