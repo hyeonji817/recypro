@@ -58,7 +58,7 @@ public class ReviewDAO {	// 데이터베이스 연결
 		return -1; //데이터베이스 오류
 	}
 	
-	//글쓰기 메소드 이따가 상품페이지 내 리뷰 빈즈 만들 때 참고할 롤모델 페이지영역1
+	//글쓰기 메소드 
 	public int write(String reviewTitle, String userId, String reviewContent) {
 		String SQL = "insert into REVIEW values(?, ?, ?, ?, ?, ?)";	// 데이터베이스 코드
 		try {
@@ -122,7 +122,7 @@ public class ReviewDAO {	// 데이터베이스 연결
 		return false;
 	}
 	
-	// 글 내용을 불러오는 함수 , 이따가 상품페이지 내 리뷰 빈즈 만들 때 참고할 롤모델 페이지영역3
+	// 글 내용을 불러오는 함수 
 	public Review getReview(int reviewId) {	// 특정한 ID에 해당하는 게시글을 가져오도록 함
 		String SQL = "SELECT * FROM REVIEW WHERE reviewId = ?";	// reviewId가 특정한 숫자일 경우 진행
 		ArrayList<Review> list = new ArrayList<Review>();

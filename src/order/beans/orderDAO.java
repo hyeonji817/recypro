@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import product.beans.Product;
 import product.beans.ProductRepository;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 import javax.servlet.http.HttpSession;
@@ -56,6 +57,7 @@ public class orderDAO {
 	// getOrder()로 주문정보 전부 리턴 -> 테이블에 추가하기
 	public Order getOrder(String shopping_userId) {
 		Order od = null;
+		// List<Product> result = null;
 
 		try {
 			// 드라이브 로드 디비 연결
@@ -74,6 +76,8 @@ public class orderDAO {
 				od.setShopping_zipCode(rs.getString("shopping_zipCode"));
 				od.setShopping_addressName(rs.getString("shopping_addressName"));
 				od.setShopping_num(rs.getString("shopping_name"));
+				
+				// result = new ArrayList<Product>();		// 삽질한 부분 (상품 DB에 저장된 내용을 갖고 오기 위함)
 
 				System.out.println("주문정보 저장완료");
 			}
@@ -88,13 +92,6 @@ public class orderDAO {
 	public int updateOrder(Order od) { // 테이블명 바뀌어서 고쳐야함 20221021 225200, 안에 컬럼숫자도 달라짐
 		int result = -1;
 		
-		// HttpSession session = Request.getSession();		// 삽질실패 
-		
-		// 세션 속성의 이름이 cardList인 세션 정보(장바구니에 담긴 물품 목록)를 가져와서 ArrayList에 대입
-		// ArrayList<Product> cartList = (String[]) request.getAttribute("cartlist");
-		// ArrayList<Product> cartList = (ArrayList<Product>) session.getAttribute("cartList");
-		
-
 		try {
 			// SQL 구문작성 & pstmt 생성
 			String SQL = "SELECT password from order where id=?"; // SQL 생성
@@ -134,6 +131,13 @@ public class orderDAO {
 			String shopping_date, String shopping_country, String shopping_zipCode, String shopping_addressName) {
 		
 		int shopping_num = help;	// 주문번호 
+		// List<Product> cartList = null; 		// 삽질실패 
+		
+		// HttpSession session = Request.getSession();		// 삽질실패 
+		
+		// 세션 속성의 이름이 cardList인 세션 정보(장바구니에 담긴 물품 목록)를 가져와서 ArrayList에 대입
+		// ArrayList<Product> cartList = (String[]) request.getAttribute("cartlist");	// 삽질실패 
+		// ArrayList<Product> cartList = (ArrayList<Product>) session.getAttribute("cartList");	// 삽질실패
 		
 		String SQL = "INSERT INTO recypro.orderlist VALUES(?,?,?,?,?,?,?,?)";	// DB에 추가할 insert 쿼리문 
 		try {
