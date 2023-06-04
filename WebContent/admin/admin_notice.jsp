@@ -109,8 +109,9 @@ initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 					</thead>
 					<tbody>
 						<%
+							int pageNum = 1; 
 							noticeDAO notiDao = new noticeDAO();		// 공지글을 뽑아올 수 있도록 인스턴스 생성 (클래스를 객체화)
-							ArrayList<Notice> list = noticeDAO.getList(pageNumber);	
+							ArrayList<Notice> list = notiDao.getList(pageNum);	
 				
 							for (int i = 0; i<list.size(); i++) {
 						%>
@@ -138,13 +139,13 @@ initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 			
 					<%
 						// 페이지 넘버 보여주는 부분
-						if (pageNumber != 1) {
+						if (pageNum != 1) {
 					%>
-					<a href="review.jsp?pageNumber=<%=pageNumber - 1%>" class="btn btn-success btn-arrow-left">이전</a>
+					<a href="../admin/admin_notice.jsp?pageNum=<%=pageNum - 1%>" class="btn btn-success btn-arrow-left">이전</a>
 					<%
-						} if (reviewDAO.nextPage(pageNumber + 1)) {	// 다음 페이지가 존재하는지
+						} if (notiDao.nextPage(pageNum + 1)) {	// 다음 페이지가 존재하는지
 					%>
-					<a href="review.jsp?pageNumber=<%=pageNumber + 1%>" class="btn btn-success btn-arrow-left">다음</a>
+					<a href="../admin/admin_notice.jsp?pageNum=<%=pageNum + 1%>" class="btn btn-success btn-arrow-left">다음</a>
 					<%
 						}
 					%>
