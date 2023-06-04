@@ -2,12 +2,16 @@
     pageEncoding="UTF-8"%>
 <%@ page import="user.beans.User"%>
 <%@ page import="user.beans.UserDAO"%>
+<%@ page import="notice.beans.Notice" %>
+<%@ page import="notice.beans.noticeDAO" %>
+
 <%@ page import="java.sql.DriverManager"%>
 <%@ page import="java.sql.SQLException"%>
 <%@ page import="java.sql.Connection"%>
 <%@ page import="java.sql.Statement"%>
 <%@ page import="java.io.PrintWriter"%>
 <%@ page import="com.util.DBConn"%>
+<%@ page import="java.util.ArrayList" %>
 <%@ page import="java.sql.ResultSet"%>
 <!-- resultset은 커서 지정용 -->
 <%@ page import="java.sql.PreparedStatement"%>
@@ -16,6 +20,7 @@
 	request.setCharacterEncoding("UTF-8");
 %>
 <jsp:useBean id="user" class="user.beans.User" scope="page" />
+<jsp:useBean id="Notice" class="notice.beans.Notice" scope="page" />
 <jsp:setProperty name="user" property="id" />
 <jsp:setProperty name="user" property="password" />
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
@@ -86,16 +91,65 @@ initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 				<table class="table" border="1">
 					<thead>
 						<tr>
+							<th style="background-color: #eeeeee; text-align: center;">번호</th>
+							<th style="background-color: #eeeeee; text-align: center;">제목</th>
+							<th style="background-color: #eeeeee; text-align: center;">작성자</th>
+							<th style="background-color: #eeeeee; text-align: center;">작성일</th>
+							<th style="background-color: #eeeeee; text-align: center;">조회하기</th>
+						</tr>
+					
+						<!-- <tr>
 							<th style="text-align: center;">번호</th>
 							<th style="text-align: center;">제목</th>
 							<th style="text-align: center;">작성자</th>
 							<th style="text-align: center;">작성일</th>
 							<th style="text-align: center;">조회수</th>
 							<th style="text-align: center;">편집</th>
-						</tr>
+						</tr> -->
 					</thead>
 					<tbody>
-						<tr class="light">
+						<%
+							noticeDAO notiDao = new noticeDAO();		// 공지글을 뽑아올 수 있도록 인스턴스 생성 (클래스를 객체화)
+							ArrayList<Notice> list = noticeDAO.getList(pageNumber);	
+				
+							for (int i = 0; i<list.size(); i++) {
+						%>
+						<tr>
+							<td>
+								<%= list.get(i).getNotice_num() %>
+							</td>		<!-- 공지글 번호 리턴 -->
+							<td>
+								<a href="notice_view.jsp?notice_num=<%=list.get(i).getNotice_num()%>"><%=list.get(i).getNotice_title().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;")
+								.replaceAll(">", "&gt;").replaceAll("\n", "<br>;")%></a>
+							</td>
+							<td>
+								<%= list.get(i).getUserId() %>		<!-- UserId 리턴 -->
+							</td>
+							<td>
+								<%= list.get(i).getNotice_date().substring(0,11) %>
+							</td>
+							<td>
+								<a href="notice_view.jsp?notice_num=<%=list.get(i).getNotice_num()%>" class="btn-btn-info" style="background-color: #9FFBF4; display: inline-block; width: 90%; font-size: 16px; font-weight: bold;">조회하기</a>
+							</td>
+					</tr>
+					<%
+						}
+					%>
+			
+					<%
+						// 페이지 넘버 보여주는 부분
+						if (pageNumber != 1) {
+					%>
+					<a href="review.jsp?pageNumber=<%=pageNumber - 1%>" class="btn btn-success btn-arrow-left">이전</a>
+					<%
+						} if (reviewDAO.nextPage(pageNumber + 1)) {	// 다음 페이지가 존재하는지
+					%>
+					<a href="review.jsp?pageNumber=<%=pageNumber + 1%>" class="btn btn-success btn-arrow-left">다음</a>
+					<%
+						}
+					%>
+					
+						<!-- <tr class="light">
 							<td style="text-align: center;">1</td>
 							<td>리싸이프로 이용 가이드 (구매 전 필독★)</td>
 							<td>admin</td>
@@ -130,14 +184,15 @@ initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     								수정하기
     							</a>
 							</td>
-						</tr>
+						</tr> -->
 					</tbody>
 				</table>
 				<!-- 테이블 영역 끝 -->
 				
 				<!-- 버튼영역 -->
 				<div class="admin_button">
-					<a href="#" class="btn btn-default btn-lg pull-right" style="font-weight: bold; color: white; background-color: rgb(11, 103, 255);">관리자 홈</a>
+					<a href="notice_write.jsp" class="btn btn-default btn-lg pull-right" style="font-weight: bold; color: white; background-color: rgb(11, 103, 255);">작성하기</a>
+					<a href="admin_index.jsp" class="btn btn-default btn-lg pull-right" style="font-weight: bold; color: white; background-color: rgb(11, 103, 255);">관리자 홈</a>
 				</div>
 				
 			</div>

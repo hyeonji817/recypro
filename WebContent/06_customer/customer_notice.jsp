@@ -1,15 +1,21 @@
+<%@page import="notice.beans.noticeDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter" %>
 <%@ page import="user.beans.User"%>
 <%@ page import="user.beans.UserDAO"%>
+<%@ page import="notice.beans.Notice" %>
+<%@ page import="notice.beans.noticeDAO" %>
+
 <%@ page import="java.sql.ResultSet"%>
 <%@ page import="java.sql.DriverManager"%>
+<%@ page import="java.util.ArrayList" %>
 <%@ page import="java.sql.SQLException"%>
 <%@ page import="java.sql.Connection"%>
 <%@ page import="java.sql.Statement"%>
 <%@ page import="java.sql.PreparedStatement"%>
 <jsp:useBean id="user" scope="session" class="user.beans.User" />
+<jsp:useBean id="Notice" class="notice.beans.Notice" scope="page" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -145,16 +151,66 @@
 	<table class="table" border="1">
 		<thead>
 			<tr>
+				<th style="background-color: #eeeeee; text-align: center;">번호</th>
+				<th style="background-color: #eeeeee; text-align: center;">제목</th>
+				<th style="background-color: #eeeeee; text-align: center;">작성자</th>
+				<th style="background-color: #eeeeee; text-align: center;">작성일</th>
+				<th style="background-color: #eeeeee; text-align: center;">조회하기</th>
+			</tr>
+			<!-- DB 연동 이전 -->
+			<!-- <tr>
 				<th style="text-align: center;">번호</th>
 				<th style="text-align: center;">제목</th>
 				<th style="text-align: center;">작성자</th>
 				<th style="text-align: center;">작성일</th>
 				<th style="text-align: center;">조회수</th>
-			</tr>
+			</tr> -->
 		</thead>
 		
-		<tbody>
-			<tr class="light">
+		<tbody><!-- 게시글 업로드 될 부분 -->
+			<%
+				noticeDAO notiDao = new noticeDAO();		// 공지글을 뽑아올 수 있도록 인스턴스 생성 (클래스를 객체화)
+				ArrayList<Notice> list = noticeDAO.getList(pageNumber);	
+				
+				for (int i = 0; i<list.size(); i++) {
+			%>
+			<tr>
+				<td>
+					<%= list.get(i).getNotice_num() %>
+				</td>		<!-- 공지글 번호 리턴 -->
+				<td>
+					<a href="notice_view.jsp?notice_num=<%=list.get(i).getNotice_num()%>"><%=list.get(i).getNotice_title().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;")
+					.replaceAll(">", "&gt;").replaceAll("\n", "<br>;")%></a>
+				</td>
+				<td>
+					<%= list.get(i).getUserId() %>		<!-- UserId 리턴 -->
+				</td>
+				<td>
+					<%= list.get(i).getNotice_date().substring(0,11) %>
+				</td>
+				<td>
+					<a href="notice_view.jsp?notice_num=<%=list.get(i).getNotice_num()%>" class="btn-btn-info" style="background-color: #9FFBF4; display: inline-block; width: 90%; font-size: 16px; font-weight: bold;">조회하기</a>
+				</td>
+			</tr>
+			<%
+				}
+			%>
+			
+			<%
+				// 페이지 넘버 보여주는 부분
+				if (pageNumber != 1) {
+			%>
+			<a href="customer_notice.jsp?pageNumber=<%=pageNumber - 1%>" class="btn btn-success btn-arrow-left">이전</a>
+			<%
+				} if (noticeDAO.nextPage(pageNumber + 1)) {	// 다음 페이지가 존재하는지
+			%>
+			<a href="customer_notice.jsp?pageNumber=<%=pageNumber + 1%>" class="btn btn-success btn-arrow-left">다음</a>
+			<%
+				}
+			%>
+			
+			<!-- DB 연동 이전 -->
+			<!-- <tr class="light">
 				<td style="text-align: center;">1</td>
 				<td>
 					<a href="customer_notice_sub1.jsp">리싸이프로 이용 가이드(구매 전 필독★)</a>
@@ -182,7 +238,7 @@
 				<td style="text-align: center;">admin</td>
 				<td style="text-align: center;">2023.03.02</td>
 				<td style="text-align: center;">3</td>
-			</tr>
+			</tr> -->
 		</tbody>
 	</table>
 	
