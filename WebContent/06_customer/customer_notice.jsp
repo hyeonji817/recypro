@@ -170,6 +170,11 @@
 		<tbody><!-- 게시글 업로드 될 부분 -->
 			<%
 				int pageNum = 1; 
+				if (request.getParameter("pageNum") != null) {
+					// 정수형으로 타입 변경해주는 부분
+					pageNum = Integer.parseInt(request.getParameter("pageNum"));
+				}
+			
 				noticeDAO notiDao = new noticeDAO();		// 공지글을 뽑아올 수 있도록 인스턴스 생성 (클래스를 객체화)
 				ArrayList<Notice> list = notiDao.getList(pageNum);	
 				

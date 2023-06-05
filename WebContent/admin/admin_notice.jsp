@@ -120,7 +120,7 @@ initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 								<%= list.get(i).getNotice_num() %>
 							</td>		<!-- 공지글 번호 리턴 -->
 							<td>
-								<a href="notice_view.jsp?notice_num=<%=list.get(i).getNotice_num()%>"><%=list.get(i).getNotice_title().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;")
+								<a href="../06_customer/notice_view.jsp?notice_num=<%=list.get(i).getNotice_num()%>"><%=list.get(i).getNotice_title().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;")
 								.replaceAll(">", "&gt;").replaceAll("\n", "<br>;")%></a>
 							</td>
 							<td>
@@ -130,7 +130,7 @@ initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 								<%= list.get(i).getNotice_date().substring(0,11) %>
 							</td>
 							<td>
-								<a href="notice_view.jsp?notice_num=<%=list.get(i).getNotice_num()%>" class="btn-btn-info" style="background-color: #9FFBF4; display: inline-block; width: 90%; font-size: 16px; font-weight: bold;">조회하기</a>
+								<a href="../06_customer/notice_view.jsp?notice_num=<%=list.get(i).getNotice_num()%>" class="btn-btn-info" style="background-color: #9FFBF4; display: inline-block; width: 90%; font-size: 16px; font-weight: bold;">조회하기</a>
 							</td>
 					</tr>
 					<%
