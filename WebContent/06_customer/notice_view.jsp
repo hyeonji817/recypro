@@ -74,7 +74,13 @@ minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 					<tr>
 						<td colspan="2">
 							<%=noti.getNotice_title().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;")
-							.replaceAll("\n", "<br>;")%>
+							.replaceAll("\n", "<br>")%>
+						</td>
+					</tr>
+					<tr>
+						<td colspan ="2" style="min-height: 300px; text-align: left;">
+							<%=noti.getNotice_content().replaceAll(" ", "&nbsp;").replaceAll("<", "&it;")
+									.replaceAll(">", "&gt;").replaceAll("\n", "<br>") %>
 						</td>
 					</tr>
 				</tbody>
