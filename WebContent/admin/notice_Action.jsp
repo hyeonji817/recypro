@@ -7,6 +7,7 @@
 	request.setCharacterEncoding("UTF-8");
 %>
 <jsp:useBean id="notice" class="notice.beans.Notice" scope="page" />
+<jsp:setProperty name="notice" property="*" />
 <jsp:setProperty name="notice" property="notice_title"/>
 <jsp:setProperty name="notice" property="notice_content"/>
 <!DOCTYPE html>
@@ -39,6 +40,8 @@
 					script.println("alert('글쓰기에 실패했습니다.')");
 					script.println("history.back()");
 					script.println("</script>");
+					System.out.println(result); 
+					// System.out.println(notiDao);
 				} else {		// 입력 성공 
 					PrintWriter script = response.getWriter();
 					script.println("<script>");
