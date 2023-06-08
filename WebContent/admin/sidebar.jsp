@@ -100,6 +100,20 @@
 			</div>
 		</li>
 		
+		<!-- 자주묻는질문 관련 조회 페이지 -->
+		<li class="nav-item">
+			<a class="nav-link collapsed" href="question_write.jsp" data-toggle="collapse" data-target="#collapseMember"
+			aria-expanded="true" aria-controls="collapsePages"> <span>Question</span>
+			</a>
+			<div id="collapseMember" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+				<div class="bg-white py-2 collapse-inner rounded">
+					<h6 class="collapse-header">Question</h6>
+					<a class="collapse-item" href="../admin/member.jsp">Question List</a>
+					<div class="collapse-divider"></div>
+				</div>
+			</div>
+		</li>
+		
 		<!-- 가입했던 사용자 관련 조회 페이지 -->
 		<!-- Nav Item - Pages Collapse Menu -->
 		<li class="nav-item">
