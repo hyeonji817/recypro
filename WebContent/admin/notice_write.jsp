@@ -21,7 +21,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <!-- 루트 폴더에 부트스트랩을 참조하는 링크 -->
 <link rel="stylesheet" href="../css/bootstrap.css">
-<title>재활용줌 전문점 : 리싸이프로 - 고객센터_공지사항 작성하기</title>
+<title>재활용품 전문점 : 리싸이프로 - 고객센터_공지사항 작성하기</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

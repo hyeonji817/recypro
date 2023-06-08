@@ -45,7 +45,7 @@ public class noticeDAO {
 	// 게시글 번호 부여 메소드. 가장 최근 게시물의 ID값을 가져오는 함수 
 	public int getNext() {
 		// 현재 게시글을 내림차순으로 조회하여 가장 마지막 글의 번호를 구한다. 
-		String SQL = "select notice_num from notice order by notice_num";
+		String SQL = "select notice_num from notice order by notice_num desc";
 		
 		try {
 			PreparedStatement pmt = conn.prepareStatement(SQL); 
@@ -82,9 +82,9 @@ public class noticeDAO {
 	}
 	
 	public ArrayList<Notice> getList(int pageNum) {
-		String SQL = "SELECT * FROM notice WHERE notice_num < ? AND notice_available = 1 ORDER BY notice_num ASC LIMIT 10";
+		String SQL = "SELECT * FROM notice WHERE notice_num < ? AND notice_available = 1 ORDER BY notice_num DESC LIMIT 10";
 		
-		// notice_num이 특정한 숫자보다 작을 때, 존재하는 글 notice_available = 1, 아래에서 10개까지 오름차순 
+		// notice_num이 특정한 숫자보다 작을 때, 존재하는 글 notice_available = 1, 아래에서 10개까지 내림차순 
 		ArrayList<Notice> list = new ArrayList<Notice>();		// Notice에서 나오는 인스턴스 보관 
 		
 		try {
@@ -111,7 +111,7 @@ public class noticeDAO {
 	//  게시글 수에 따라 페이징 처리하기 위함 
 	public boolean nextPage(int pageNum) {	// 다음 페이지가 없을 경우에 대한 처리 
 		// 조회된 기준 notice_num으로 오름차순하여 위에 10개만 보여주는 쿼리 
-		String SQL = "SELECT * FROM notice WHERE notice_num < ? AND notice_available = 1 ORDER BY notice_num ASC LIMIT 10"; 
+		String SQL = "SELECT * FROM notice WHERE notice_num < ? AND notice_available = 1 ORDER BY notice_num DESC LIMIT 10"; 
 		
 		ArrayList<Notice> list = new ArrayList<Notice>();		
 		
