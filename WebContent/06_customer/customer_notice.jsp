@@ -1,4 +1,3 @@
-<%@page import="notice.beans.noticeDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter" %>
@@ -157,14 +156,6 @@
 				<th style="background-color: #eeeeee; text-align: center;">작성일</th>
 				<th style="background-color: #eeeeee; text-align: center;">조회하기</th>
 			</tr>
-			<!-- DB 연동 이전 -->
-			<!-- <tr>
-				<th style="text-align: center;">번호</th>
-				<th style="text-align: center;">제목</th>
-				<th style="text-align: center;">작성자</th>
-				<th style="text-align: center;">작성일</th>
-				<th style="text-align: center;">조회수</th>
-			</tr> -->
 		</thead>
 		
 		<tbody><!-- 게시글 업로드 될 부분 -->
@@ -214,37 +205,6 @@
 			<%
 				}
 			%>
-			
-			<!-- DB 연동 이전 -->
-			<!-- <tr class="light">
-				<td style="text-align: center;">1</td>
-				<td>
-					<a href="customer_notice_sub1.jsp">리싸이프로 이용 가이드(구매 전 필독★)</a>
-				</td>
-				<td style="text-align: center;">admin</td>
-				<td style="text-align: center;">2023.03.02</td>
-				<td style="text-align: center;">1</td>
-			</tr>
-			<tr class="light">
-				<td style="text-align: center;">2</td>
-				<td>
-					<a href="customer_notice_sub2.jsp">사이즈 교환 1회 무료서비스 실시</a>
-				</td>
-				<td style="text-align: center;">admin</td>
-				<td style="text-align: center;">2023.03.02</td>
-				<td style="text-align: center;">2</td>
-			</tr>
-			<tr class="light">
-				<td style="text-align: center;">3</td>
-				<td>
-					<a href="customer_notice_sub3.jsp">
-						새벽배송 배송 시간 및 지역 변경
-					</a>
-				</td>
-				<td style="text-align: center;">admin</td>
-				<td style="text-align: center;">2023.03.02</td>
-				<td style="text-align: center;">3</td>
-			</tr> -->
 		</tbody>
 	</table>
 	

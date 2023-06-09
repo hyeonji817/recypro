@@ -1,5 +1,21 @@
+<%@page import="question.beans.questionDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.io.PrintWriter" %>
+<%@ page import="user.beans.User"%>
+<%@ page import="user.beans.UserDAO"%>
+<%@ page import="question.beans.Question" %>
+<%@ page import="question.beans.questionDAO" %>
+
+<%@ page import="java.sql.ResultSet"%>
+<%@ page import="java.sql.DriverManager"%>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.sql.SQLException"%>
+<%@ page import="java.sql.Connection"%>
+<%@ page import="java.sql.Statement"%>
+<%@ page import="java.sql.PreparedStatement"%>
+<jsp:useBean id="user" scope="session" class="user.beans.User" />
+<jsp:useBean id="Question" class="question.beans.Question" scope="page" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,9 +24,18 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 <!-- bootstrap -->
-<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" /> 
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../css/bootstrap.css">
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<link
+	href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+	rel="stylesheet">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+	crossorigin="anonymous">
 <title>재활용품 전문점 : 리싸이프로 - 고객센터_자주묻는질문</title>
 <style>
 .title {
@@ -56,9 +81,49 @@
 					<th style="background-color: #eeeeee; text-align: center;">답변</th>
 				</tr>
 			</thead>
-			<tbody> <!-- 게시글 업로드 될 부분 (일단은 UI만 구현하고, UI 구현 끝나면 기능 추가할 겸 변경 예정) -->
-				<!-- 1행 -->
+			<tbody> 
+				<%
+					int pageNum = 1; 
+					if (request.getParameter("pageNum") != null) {
+						// 정수형으로 타입 변경해주는 부분 
+						pageNum = Integer.parseInt(request.getParameter("pageNum"));
+					}
+					
+					questionDAO queDao = new questionDAO();		// 질문글을 뽑아올 수 있도록 인스턴스 생성 (클래스를 객체화)
+					ArrayList<Question> list = queDao.getList(pageNum);
+					
+					for (int i = 0; i<list.size(); i++) {
+				%>
 				<tr>
+					<!-- 질문글 번호 리턴 -->
+					<td style="font-size: 17px; position: relative; left: 2%; padding-top: 2%;">
+						<%= list.get(i).getQuestion_num() %>
+					</td>
+					<td style="font-size: 17px; position: relative; left: 5%; padding-top: 2%;">
+						<a href="question_view.jsp?question_num=<%=list.get(i).getQuestion_num()%>"><%=list.get(i).getQuestion_title().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;")
+						.replaceAll(">", "&gt;").replaceAll("\n", "<br>;")%></a>
+					</td>
+					<td style="font-size: 17px; position: relative; left: 2%; padding-top: 1%;">
+						<a href="question_view.jsp?question_num=<%=list.get(i).getQuestion_num()%>" class="btn-btn-info" style="background-color: #9FFBF4; display: inline-block; width: 90%; font-size: 16px; font-weight: bold;">조회하기</a>
+					</td>
+				</tr>
+				<%
+					}
+				%>
+				
+				<%
+					// 페이지 넘버 보여주는 부분 
+					if (pageNum != 1) {
+				%>
+				<a href="customer_question.jsp?pageNum=<%=pageNum - 1%>" class="btn btn-success btn-arrow-left">이전</a>
+				<%
+					} if (queDao.nextPage(pageNum + 1)) {	// 다음 페이지가 존재하는지
+				%>
+				<a href="customer_question.jsp?pageNum=<%=pageNum + 1%>" class="btn btn-success btn-arrow-left">다음</a>
+				<%
+					}
+				%>
+				<!-- <tr>
 					<td style="font-size: 17px; position: relative; left: 2%; padding-top: 2%;">
 						1
 					</td>
@@ -70,7 +135,6 @@
 					</td>
 				</tr>
 				
-				<!-- 2행 -->
 				<tr>
 					<td style="font-size: 17px; position: relative; left: 2%; padding-top: 2%;">
 						2
@@ -83,7 +147,6 @@
 					</td>
 				</tr>
 				
-				<!-- 3행 -->
 				<tr>
 					<td style="font-size: 17px; position: relative; left: 2%; padding-top: 2%;">
 						3
@@ -96,7 +159,6 @@
 					</td>
 				</tr>
 				
-				<!-- 4행 -->
 				<tr>
 					<td style="font-size: 17px; position: relative; left: 2%; padding-top: 2%;">
 						4
@@ -109,7 +171,6 @@
 					</td>
 				</tr>
 				
-				<!-- 5행 -->
 				<tr>
 					<td style="font-size: 17px; position: relative; left: 2%; padding-top: 2%;">
 						5
@@ -122,7 +183,6 @@
 					</td>
 				</tr>
 				
-				<!-- 6행 -->
 				<tr>
 					<td style="font-size: 17px; position: relative; left: 2%; padding-top: 2%;">
 						6
@@ -135,7 +195,6 @@
 					</td>
 				</tr>
 				
-				<!-- 7행 -->
 				<tr>
 					<td style="font-size: 17px; position: relative; left: 2%; padding-top: 2%;">
 						7
@@ -148,7 +207,6 @@
 					</td>
 				</tr>
 				
-				<!-- 8행 -->
 				<tr>
 					<td style="font-size: 17px; position: relative; left: 2%; padding-top: 2%;">
 						8
@@ -161,7 +219,6 @@
 					</td>
 				</tr>
 				
-				<!-- 9행 -->
 				<tr>
 					<td style="font-size: 17px; position: relative; left: 2%; padding-top: 2%;">
 						9
@@ -174,7 +231,6 @@
 					</td>
 				</tr>
 				
-				<!-- 10행 -->
 				<tr>
 					<td style="font-size: 17px; position: relative; left: 2%; padding-top: 2%;">
 						10
@@ -185,7 +241,7 @@
 					<td style="font-size: 17px; position: relative; left: 2%; padding-top: 1%;">
 						<a href="customer_answer10.jsp" class="btn btn-default" style="background:#eee; text-align: center;">조회</a>
 					</td>
-				</tr>
+				</tr> -->
 				
 			</tbody>
 		</table>
