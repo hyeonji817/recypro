@@ -1,8 +1,8 @@
 package question.beans;
 
-public class question {
+public class Question {
 	private int question_num;		// 질문글 번호 
-	private String quetion_title;		// 질문글 제목 
+	private String question_title;		// 질문글 제목 
 	private String question_response;		// 질문글 답변 
 	private int question_available;		// 질문글 활성 여부
 	
@@ -14,14 +14,14 @@ public class question {
 		this.question_num = question_num;
 	}
 	
-	public String getQuetion_title() {
-		return quetion_title;
+	public String getQuestion_title() {
+		return question_title;
 	}
-	
-	public void setQuetion_title(String quetion_title) {
-		this.quetion_title = quetion_title;
+
+	public void setQuestion_title(String question_title) {
+		this.question_title = question_title;
 	}
-	
+
 	public String getQuestion_response() {
 		return question_response;
 	}
@@ -40,7 +40,7 @@ public class question {
 
 	@Override
 	public String toString() {
-		return "question [question_num=" + question_num + ", quetion_title=" + quetion_title + ", question_response="
+		return "Question [question_num=" + question_num + ", question_title=" + question_title + ", question_response="
 				+ question_response + ", question_available=" + question_available + "]";
 	}
 }

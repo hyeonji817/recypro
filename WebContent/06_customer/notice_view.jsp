@@ -86,7 +86,7 @@ minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 				</tbody>
 			</table>
 			<div class="button">
-				<a href="review.jsp" class="btn btn-default btn-lg" style="background-color: #9FFBF4; float: right; position: relative; color: black; font-weight: bold; right: 240%;">목록</a>
+				<a href="customer_notice.jsp" class="btn btn-default btn-lg" style="background-color: #9FFBF4; float: right; position: relative; color: black; font-weight: bold; right: 240%;">목록</a>
 				
 				<%
 					if (id != null) {

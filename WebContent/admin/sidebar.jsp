@@ -102,7 +102,7 @@
 		
 		<!-- 자주묻는질문 관련 조회 페이지 -->
 		<li class="nav-item">
-			<a class="nav-link collapsed" href="question_write.jsp" data-toggle="collapse" data-target="#collapseMember"
+			<a class="nav-link collapsed" href="admin_question.jsp" data-toggle="collapse" data-target="#collapseMember"
 			aria-expanded="true" aria-controls="collapsePages"> <span>Question</span>
 			</a>
 			<div id="collapseMember" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
