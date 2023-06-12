@@ -108,7 +108,7 @@ initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 								<%= list.get(i).getQuestion_num() %>
 							</td>
 							<td style="font-size: 17px; position: relative; left: 5%; padding-top: 2%;">
-								<a href="question_view.jsp?question_num=<%=list.get(i).getQuestion_num()%>"><%=list.get(i).getQuestion_title().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;")
+								<a href="../06_customer/question_view.jsp?question_num=<%=list.get(i).getQuestion_num()%>"><%=list.get(i).getQuestion_title().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;")
 								.replaceAll(">", "&gt;").replaceAll("\n", "<br>;")%></a>
 							</td>
 							<td style="font-size: 17px; position: relative; left: 2%; padding-top: 1%;">

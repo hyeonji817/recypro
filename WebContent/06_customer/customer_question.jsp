@@ -61,7 +61,29 @@
 </style>
 </head>
 <body>
-<%@ include file="../01_main/index.jsp" %>
+	<%
+		// 한글처리, 파라미터 (세션생성) 
+		request.setCharacterEncoding("UTF-8");
+	
+		// id의 존재 유무를 통해 로그인 되어 있는지 사전 체크 
+		String id = null; 
+		PrintWriter pr = response.getWriter(); 
+		
+		if (session.getAttribute("id") != null) {
+			id = (String)session.getAttribute("id"); 
+			pr.println("location.href='../06_customer/customer_question.jsp'");
+		}
+		
+		if (id == null) {
+	%>
+	<%@ include file="../01_main/index_top.jsp" %>
+	<%
+		} else {
+	%>
+	<%@ include file="../01_main/index.jsp" %>
+	<%
+		}
+	%>
 	
 	<!-- 제목 -->
 	<div class="title">
@@ -104,7 +126,7 @@
 						.replaceAll(">", "&gt;").replaceAll("\n", "<br>;")%></a>
 					</td>
 					<td style="font-size: 17px; position: relative; left: 2%; padding-top: 1%;">
-						<a href="question_view.jsp?question_num=<%=list.get(i).getQuestion_num()%>" class="btn-btn-info" style="background-color: #9FFBF4; display: inline-block; width: 90%; font-size: 16px; font-weight: bold;">조회하기</a>
+						<a href="question_view.jsp?question_num=<%=list.get(i).getQuestion_num()%>" class="btn-btn-default" style="background-color: #9FFBF4; display: inline-block; width: 90%; font-size: 16px; font-weight: bold;">조회하기</a>
 					</td>
 				</tr>
 				<%
