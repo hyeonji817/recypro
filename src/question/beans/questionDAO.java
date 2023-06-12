@@ -45,7 +45,7 @@ public class questionDAO {
 	
 	// 글쓰기 메소드 
 	public int write(String question_title, String question_response) {
-		String sql = "insert into question values(?, ?, ?, ?, ?)";		// 입력할 데이터베이스 코드
+		String sql = "insert into question values(?, ?, ?, ?)";		// 입력할 데이터베이스 코드
 		
 		try {
 			PreparedStatement pmt = con.prepareStatement(sql);		// con 객체를 이용. sql 문장을 실행준비로 만듦 
@@ -53,6 +53,7 @@ public class questionDAO {
 			pmt.setString(2, question_title);		// 입력될 질문글 제목 
 			pmt.setString(3, question_response);		// 답변글 
 			pmt.setInt(4, 1);		// 글의 유효번호. 허용상태 글이 있는 상태이기 때문에 1로 시작 
+			//pmt.setInt(5, 1);
 			
 			return pmt.executeUpdate();		// 성공적으로 수행 시, 0 이상의 값을 반환
 		} catch (Exception e) {

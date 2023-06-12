@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ page import="user.beans.User"%>
 <%@ page import="user.beans.UserDAO"%>    
+<%@ page import="question.beans.Question" %>
+<%@ page import="question.beans.questionDAO" %>
     
 <%@ page import="java.io.PrintWriter" %>
 <%@ page import="java.sql.ResultSet"%>
@@ -65,7 +67,7 @@
 		
 		if (session.getAttribute("id") != null) {
 			id = (String)session.getAttribute("id"); 
-			pw.println("location.href='../admin/notice_write.jsp'");
+			pw.println("location.href='../admin/question_write.jsp'");
 		}
 		
 		if (id == null) {
@@ -104,7 +106,7 @@
 						</tr>
 						<tr>
 							<td>
-								<textarea class="form-control" placeholder="글 내용" name="question_content" maxlength="2048" style="min-height: 500px; width:800px;"></textarea>
+								<textarea class="form-control" placeholder="글 내용" name="question_response" maxlength="2048" style="min-height: 500px; width:800px;"></textarea>
 							</td>
 						</tr>
 					</tbody>

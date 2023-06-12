@@ -90,8 +90,14 @@ minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 			
 			<!-- 버튼 영역 -->
 			<div class="button">
-				<a href="customer_question.jsp" class="btn btn-default btn-lg" style="background-color: #9FFBF4; float: right; position: relative; color: black; font-weight: bold; right: 240%;">목록</a>
-				<a href="#" class="btn btn-default btn-lg" style="background-color: #9FFBF4; color: black; position: relative; right: -440%; bottom: 262%; width: 130px; height: 48px; padding-top: 14%; font-weight: bold;">삭제하기</a>
+				<a href="customer_question.jsp" class="btn btn-default btn-lg" style="background-color: #9FFBF4; float: right; position: relative; color: black; font-weight: bold; right: 240%;">이전페이지</a>
+				<% if (id != null) {
+            			if (id.equals("admin")) { %>
+					<a href="../admin/admin_question.jsp" class="btn btn-default btn-lg" style="background-color: #9FFBF4; color: black; position: relative; right: -440%; bottom: 262%; width: 130px; height: 48px; padding-top: 14%; font-weight: bold;">고객센터 홈</a>
+				<%
+						}
+					}
+            	%>
 			</div>
 		</div>
 	</div>
