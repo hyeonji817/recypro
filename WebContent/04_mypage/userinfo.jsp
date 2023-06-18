@@ -146,24 +146,6 @@ initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 	font-weight: bold;
 }
 
-/** .shopping_list {
-	border-radius: 10px; 
-	height: 60px;
-	position: relative; 
-	left: -20%; 
-	width: 250px;
-	border: 1px solid gray; 
-}
-
-.shopping_list a {
-	padding-top: 3%;
-	top: 23%; 
-	position: relative; 
-	left: 3%;
-	font-size: 17px;
-	font-weight: bold;
-} */
-
 .review_list {
 	border-radius: 10px; 
 	height: 60px;

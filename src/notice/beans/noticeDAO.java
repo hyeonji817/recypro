@@ -81,6 +81,7 @@ public class noticeDAO {
 		return -1;		// 데이터베이스 오류 
 	}
 	
+	// notice DB 데이터 나열
 	public ArrayList<Notice> getList(int pageNum) {
 		String SQL = "SELECT * FROM notice WHERE notice_num < ? AND notice_available = 1 ORDER BY notice_num DESC LIMIT 10";
 		
