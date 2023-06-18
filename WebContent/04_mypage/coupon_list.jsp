@@ -117,24 +117,6 @@
 	font-weight: bold;
 }
 
-/** .return {
-	border-radius: 10px; 
-	height: 60px;
-	position: relative; 
-	left: -16%;
-	width: 250px;
-	border: 1px solid gray; 
-}
-
-.return a {
-	padding-top: 3%;
-	top: 23%; 
-	position: relative; 
-	left: 3%;
-	font-size: 17px;
-	font-weight: bold;
-} */
-
 .coupon_list {
 	border-radius: 10px; 
 	height: 60px;
@@ -153,24 +135,6 @@
 	font-size: 17px;
 	font-weight: bold;
 }
-
-/** .shopping_list {
-	border-radius: 10px; 
-	height: 60px;
-	position: relative; 
-	left: -16%; 
-	width: 250px;
-	border: 1px solid gray; 
-}
-
-.shopping_list a {
-	padding-top: 3%;
-	top: 23%; 
-	position: relative; 
-	left: 3%;
-	font-size: 17px;
-	font-weight: bold;
-} */
 
 .review_list {
 	border-radius: 10px; 
@@ -235,11 +199,17 @@
 	<%
 		// 한글처리, 파라미터 (세션생성)
 		request.setCharacterEncoding("UTF-8");
+	
+		// id값의 존재 유무를 통해 로그인 되어 있는지 사전체크 
 		String id = (String) session.getAttribute("id");
 		String name = request.getParameter("name");
+		PrintWriter pw = response.getWriter();
+		
 		// id없이는 진입불가, id없는 경우 로그인페이지로 이동 
 		if (id == null) {
 			response.sendRedirect("../02_account/login.jsp");
+		} else {
+			pw.println("location.href='../04_mypage/coupon_list.jsp'"); 
 		}
 	%>
 	
@@ -271,21 +241,11 @@
 					<a href="mylevel.jsp">마이레벨</a>
 				</div>
 			</li>
-			<!-- <li>
-				<div class="return">
-					<a href="return_product.jsp">물품 반품신청</a>
-				</div>
-			</li> -->
 			<li>
 				<div class="coupon_list">
 					<a href="coupon_list.jsp">쿠폰함</a>
 				</div>
 			</li>
-			<!-- <li>
-				<div class="shopping_list">
-					<a href="shopping_history.jsp">쇼핑내역</a>
-				</div>
-			</li> -->
 			<li>
 				<div class="review_list">
 					<a href="review_history.jsp">게시판 작성 내역</a>
@@ -309,11 +269,12 @@
 				<th style="text-align: center;">사용여부</th>
 			</tr>
 		</thead>
-		<tbody>	<!-- 지금은 일단 UI만 구현하고, UI 구현 끝나는대로 쿠폰 기능 구현할 예정 -->
-			<tr class="white">
-				<td style="text-align: center;">3</td>
+		<tbody>	
+			<!-- 수정전 테스트 -->
+			<!--<tr class="white">
+				<td style="text-align: center;">3</td> -->
 <!-- 				<td style="float: left; text-decoration-line: none;">50% OFF 할인쿠폰 (생일 이벤트) 등급 무관하게 드려요!</td> -->
-				<td>50% OFF 할인쿠폰 (생일 이벤트) 등급 무관하게 드려요!</td>
+				<!-- <td>50% OFF 할인쿠폰 (생일 이벤트) 등급 무관하게 드려요!</td>
 				<td>2022.08.17 ~ 2023.02.17 (6개월)</td>
 				<td>N</td>
 			</tr>
@@ -328,7 +289,7 @@
 				<td>20% OFF 할인쿠폰</td>
 				<td>2023.08.12 ~ 2023.11.12 (3개월)</td>
 				<td>N</td>
-			</tr>
+			</tr> -->
 		</tbody>
 	</table>
 </body>

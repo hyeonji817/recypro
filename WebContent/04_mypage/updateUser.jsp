@@ -145,24 +145,6 @@
 	font-weight: bold;
 }
 
-/** .return {
-	border-radius: 10px; 
-	height: 60px;
-	position: relative; 
-	left: -20%;
-	width: 250px;
-	border: 1px solid gray; 
-}
-
-.return a {
-	padding-top: 3%;
-	top: 23%; 
-	position: relative; 
-	left: 3%;
-	font-size: 17px;
-	font-weight: bold;
-} */
-
 .coupon_list {
 	border-radius: 10px; 
 	height: 60px;
@@ -180,24 +162,6 @@
 	font-size: 17px;
 	font-weight: bold;
 }
-
-/** .shopping_list {
-	border-radius: 10px; 
-	height: 60px;
-	position: relative; 
-	left: -20%; 
-	width: 250px;
-	border: 1px solid gray; 
-}
-
-.shopping_list a {
-	padding-top: 3%;
-	top: 23%; 
-	position: relative; 
-	left: 3%;
-	font-size: 17px;
-	font-weight: bold;
-} */
 
 .review_list {
 	border-radius: 10px; 
@@ -387,21 +351,11 @@ input .form-control {
 					<a href="mylevel.jsp">마이레벨</a>
 				</div>
 			</li>
-			<!-- <li>
-				<div class="return">
-					<a href="return_product.jsp">물품 반품신청</a>
-				</div>
-			</li> -->
 			<li>
 				<div class="coupon_list">
 					<a href="coupon_list.jsp">쿠폰함</a>
 				</div>
 			</li>
-			<!-- <li>
-				<div class="shopping_list">
-					<a href="shopping_history.jsp">쇼핑내역</a>
-				</div>
-			</li> -->
 			<li>
 				<div class="review_list">
 					<a href="review_history.jsp">게시판 작성 내역</a>
@@ -421,7 +375,7 @@ input .form-control {
 				<h5 for="id" class="tap1">아이디</h5>
 				<div class="tap2">
 					<input type="text" name="id" class="form-control" value="<%=user.getId()%>" readonly>
-					<!--ID 영역은 disabled가 아니라 readonly로 해야 ID 값을 그대로 받아옴. disabled는  submit이 안된다고 함. ps.조원우love 영구보존 -->
+					<!--ID 영역은 disabled가 아니라 readonly로 해야 ID 값을 그대로 받아옴. disabled는  submit이 안된다고 함. -->
 				</div>
 			</div>
 			<div class="form-group">
