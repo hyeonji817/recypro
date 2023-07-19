@@ -60,8 +60,10 @@
 		} else {
 			// 매개변수로서 글 제목 내용을 넘겨서 빈 공간 확인 
 			if (request.getParameter("pd_reviewTitle") == null || request.getParameter("pd_reviewContent") == null || 
-					request.getParameter("pd_reviewTitle").equals("") || request.getParameter("reviewStar").equals("") || 
-					request.getParameter("pd_reviewContent").equals("")) {
+					request.getParameter("pd_reviewTitle").equals("") || request.getParameter("pd_reviewContent").equals("")) {
+			// if (request.getParameter("pd_reviewTitle") == null || request.getParameter("pd_reviewContent") == null || 
+				/**	request.getParameter("pd_reviewTitle").equals("") || request.getParameter("reviewStar").equals("") || 
+					request.getParameter("pd_reviewContent").equals("")) { */
 				PrintWriter pwr = response.getWriter();
 				pwr.println("<script>");
 				pwr.println("alert('모든 칸을 입력해주십시오.')");

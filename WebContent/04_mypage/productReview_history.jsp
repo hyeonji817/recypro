@@ -131,24 +131,6 @@
 	font-weight: bold;
 }
 
-/** .return {
-	border-radius: 10px; 
-	height: 60px;
-	position: relative; 
-	left: -16%;
-	width: 250px;
-	border: 1px solid gray; 
-}
-
-.return a {
-	padding-top: 3%;
-	top: 23%; 
-	position: relative; 
-	left: 3%;
-	font-size: 17px;
-	font-weight: bold;
-} */
-
 .coupon_list {
 	border-radius: 10px; 
 	height: 60px;
@@ -166,24 +148,6 @@
 	font-size: 17px;
 	font-weight: bold;
 }
-
-/** .shopping_list {
-	border-radius: 10px; 
-	height: 60px;
-	position: relative; 
-	left: -16%; 
-	width: 250px;
-	border: 1px solid gray; 
-}
-
-.shopping_list a {
-	padding-top: 3%;
-	top: 23%; 
-	position: relative; 
-	left: 3%;
-	font-size: 17px;
-	font-weight: bold;
-} */
 
 .review_list {
 	border-radius: 10px; 
@@ -319,21 +283,11 @@
 					<a href="mylevel.jsp">마이레벨</a>
 				</div>
 			</li>
-			<!-- <li>
-				<div class="return">
-					<a href="return_product.jsp">물품 반품신청</a>
-				</div>
-			</li> -->
 			<li>
 				<div class="coupon_list">
 					<a href="coupon_list.jsp">쿠폰함</a>
 				</div>
 			</li>
-			<!-- <li>
-				<div class="shopping_list">
-					<a href="shopping_history.jsp">쇼핑내역</a>
-				</div>
-			</li> -->
 			<li>
 				<div class="review_list">
 					<a href="review_history.jsp">게시판 작성 내역</a>
@@ -353,7 +307,7 @@
 			<thead>
 				<tr>
 					<th style="text-align: center;">번호</th>
-					<th style="text-align: center;">평점 수</th>
+					<!-- <th style="text-align: center;">평점 수</th> -->
 					<th style="text-align: center;">제목</th>
 					<th style="text-align: center;">상품명</th>
 					<th style="text-align: center;">사용자 ID명</th>

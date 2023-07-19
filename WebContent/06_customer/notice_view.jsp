@@ -86,20 +86,20 @@ minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 				</tbody>
 			</table>
 			<div class="button">
-				<a href="customer_notice.jsp" class="btn btn-default btn-lg" style="background-color: #9FFBF4; float: right; position: relative; color: black; font-weight: bold; right: 240%;">목록</a>
+				<a href="customer_notice.jsp" class="btn btn-default btn-lg" style="background-color: #9FFBF4; float: right; position: relative; color: black; font-weight: bold; right: -60%;">목록</a>
 				
 				<%
 					if (id != null) {
 				%>
-				<form name="NoticeModify" id="NoticeModify" action="../admin/notice_modify.jsp?notice_num=<%=notice_num%>" style="float: right; position: relative; right: 135%;" method="post">		
+				<!-- <form name="NoticeModify" id="NoticeModify" action="../admin/notice_modify.jsp?notice_num=<%--=notice_num--%>" style="float: right; position: relative; right: 75%;" method="post">		
 						<a>
-						<button id="Noticemodify" class="btn btn-default" name="notice_forward" value="<%=notice_num%>" onclick="ClickModify()" style="width: 72px; height: 48px; background-color: #9FFBF4; font-size: 20px; padding-top: 10%; font-weight: bold; color: black;">
+						<button id="Noticemodify" class="btn btn-default" name="notice_forward" value="<%--=notice_num--%>" onclick="ClickModify()" style="width: 72px; height: 48px; background-color: #9FFBF4; font-size: 20px; padding-top: 10%; font-weight: bold; color: black;">
 						수정</a>
-				</form>
+				</form> -->
 				<%
 					}
 				%>
-				<a href="#" class="btn btn-default btn-lg" style="background-color: #9FFBF4; color: black; position: relative; right: -440%; bottom: 262%; width: 130px; height: 48px; padding-top: 14%; font-weight: bold;">삭제하기</a>
+				<!-- <a href="#" class="btn btn-default btn-lg" style="background-color: #9FFBF4; color: black; position: relative; right: -170%; bottom: 117%; width: 130px; height: 48px; padding-top: 14%; font-weight: bold;">삭제하기</a> -->
 			</div>
 		</div>
 	</div>

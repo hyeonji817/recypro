@@ -267,7 +267,7 @@
 		} 
 	%>
 	<div class="container">
-		<p><h2><a href="Products.jsp" style="color: black; font-weight: bold; background-color: #9FFBF4;" class="btn btn-default btn-lg">&laquo; 상품 목록</a></h2></p>
+		<p><h2><a href="Products.jsp" style="color: black; position: relative; float: right; font-weight: bold; background-color: #9FFBF4;" class="btn btn-default btn-lg">상품 목록</a></h2></p>
 	</div>
 </body>
 </html>

@@ -32,7 +32,7 @@
             <ul class="nav-right">
                 <li>
                     <a class="link" href="../03_shop/Products.jsp">상품</a>
-                    <ul class="submenu">
+                    <!-- <ul class="submenu">
                     	<li>
                     		<a class="link" href="../03_shop/Products.jsp">상품 목록</a>
                     	</li>
@@ -42,14 +42,39 @@
                     	<li>
                     		<a class="link" href="../03_shop/Product_Review.jsp">리뷰확인</a>
                     	</li>
-                    </ul>
+                    </ul> -->
                 </li>
                 <c:set var="index" value="0" />
                 <li>
                     <a class="link" href="../05_review/review.jsp">게시판</a>
+                    <ul class="submenu">
+                    	<li>
+                    		<a class="link" href="../05_review/review.jsp">목록</a>
+                    	</li>
+                    	<li>
+                    		<a class="link" href="../05_review/write.jsp">글쓰기</a>
+                    	</li>
+                    </ul>
                 </li>
                 <li>
                 	<a class="link" href="../06_customer/customer_main.jsp">고객센터</a>
+                	<ul class="submenu">
+                		<li>
+                			<a class="link" href="../06_customer/customer_notice.jsp">공지사항</a>
+                		</li>
+                		<li>
+                			<a class="link" href="../06_customer/customer_policy.jsp">운영정책</a>
+                		</li>
+                		<li>
+                			<a class="link" href="../06_customer/customer_question.jsp">자주묻는질문</a> 
+                		</li>
+                		<li>
+                			<a class="link" href="../06_customer/customer_consult.jsp">온라인 문의</a>
+                		</li>
+                		<li>
+                			<a class="link" href="../06_customer/customer_declare.jsp">신고하기</a>
+                		</li>
+                	</ul>
                 </li>
                 <li>
                     <a class="link" href="../02_account/login.jsp">로그인</a>

@@ -117,7 +117,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr class="light">
+			<!-- <tr class="light">
 				<td style="text-align: center; postion: relative; padding-top: 2%; font-size: 20px;">1</td>
 				<td style="postion: relative; padding-top: 2%; font-size: 20px;">상품 배송이 늦어요..ㅠㅠ 언제 도착하시나요?ㅠㅠ</td>
 				<td style="text-align: center; postion: relative; padding-top: 2%; font-size: 20px;">2023.03.04</td>
@@ -126,7 +126,7 @@
 				<td style="text-align: center; postion: relative; padding-top: 2%; font-size: 20px;">2</td>
 				<td style="postion: relative; padding-top: 2%; font-size: 20px;">물건 변상 요청합니다. 손상된 채로 들어왔네요</td>
 				<td style="text-align: center; postion: relative; padding-top: 2%; font-size: 20px;">2023.03.03</td>
-			</tr>
+			</tr> -->
 		</tbody>
 	</table>
 	

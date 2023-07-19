@@ -186,7 +186,7 @@
 					<%= list.get(i).getNotice_date().substring(0,11) %>
 				</td>
 				<td>
-					<a href="notice_view.jsp?notice_num=<%=list.get(i).getNotice_num()%>" class="btn-btn-info" style="background-color: #9FFBF4; display: inline-block; width: 90%; font-size: 16px; font-weight: bold;">조회하기</a>
+					<a href="notice_view.jsp?notice_num=<%=list.get(i).getNotice_num()%>" class="btn-btn-default" style="background-color: #9FFBF4; display: inline-block; width: 75%; font-size: 16px; font-weight: bold;">조회하기</a>
 				</td>
 			</tr>
 			<%

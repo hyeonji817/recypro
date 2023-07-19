@@ -337,7 +337,7 @@
 	<div class="consult_write" id="consultant">
 		<h1>문의글 작성</h1>
 		<div class="write_area">
-			<form action="write_ok.jsp" name="cw_form" method="post" enctype="multipart/form-data">
+			<form action="consult_Action.jsp" name="cw_form" method="post" enctype="multipart/form-data">
 				<input type="hidden" name="id" value="" />
 				<!-- 나만의 방식 (목업 참고) -->
 				<div class="form-group" id="write_consult">
@@ -347,18 +347,6 @@
 						<button type="submit">첨부파일</button>
 					</a>
 				</div>
-				
-				<!-- 참고했던 내용 -->
-				<!-- <div class="wi_line"></div>
-				<div class="in_text">
-					<textarea name="qa_text" placeholder="내용" required></textarea>
-				</div>
-				<div class="in_text in_date">
-					<input type="file" name="qa_file" />
-				</div>
-				<div class="bt_se">
-					<button type="submit">글 작성</button>
-				</div> -->
 			</form>
 		</div>
 	</div>

@@ -34,15 +34,6 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
 	rel="stylesheet">
-<link rel="stylesheet"
-	href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-<link rel="stylesheet"
-	href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
-
-<!-- 모바일 웹 페이지 설정 -->
-<link rel="shortcut icon" href="assets/ico/favicon.ico" />
-<link rel="apple-touch-icon-precomposed"
-	href="assets/ico/apple-touch-icon-144-precomposed.png" />
 
 <!-- Bootstrap -->
 <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"
@@ -136,19 +127,6 @@
 	height: 500px; 
 	margin: 0 auto; 
 }
-
-/** .popular li {
-	width: 22%;
-	display: inline-block;
-	text-align: center;
-	margin-bottom: 60px;
-}
-
-.popular li:nth-child(8) {
-	position: relative;
-	bottom: 20px;
-}
-*/
 
 ul {
 	list-style: none; /** 목록 리스트 중에서 점을 없애는 스타일 방식 */ 
@@ -287,7 +265,7 @@ h6 {
 }
 
 .kakaotalk_plus {
-	background: yellow;
+	background: #FFF612;
 	width: 144%;
 	height: 200px;
 	margin-left: -8%;
@@ -433,78 +411,6 @@ h6 {
 			</div>
 		</div>
 	</div>
-
-	<!-- 중간 배너 및 소배너 영역(인기상품) -->
-	<!-- <div class="popular_list">
-		<ul>
-			<li class="popular_item">
-				<img src="../img/shopdetail/1_3-1_minimum.jpg" />
-  				<p class="popular_text">가치솝 비누</p>
-			</li>
-			<li class="popular_item">
-				<img src="../img/shopdetail/4_puppy_pubbag_minimum.png" />
-  				<p class="popular_text2">애견 풉백 <br> 생분해 리필 </p>
-			</li>
-			<li class="popular_item">
-				<img src="../img/shopdetail/rabbit_tumblur_minimum.png" />
-  				<p class="popular_text">토끼 텀블러</p>
-			</li>
-			<li class="popular_item">
-				<img src="../img/shopdetail/finger_snap_minimum.png" />
-  				<p class="popular_text">손운동 기구</p>
-			</li>
-			<li class="popular_item">
-				<img src="../img/shopdetail/puppy_gum_minimum.jpg" />
-				<p class="popular_text">강아지 <br>개껌 간식</p>
-			</li>
-			<li class="popular_item">
-				<img src="../img/shop/coffee_holder_minimum.png" />
-				<p class="popular_text">드링크백 <br>텀블러 백</p>
-			</li>
-			<li class="popular_item">
-				<img src="../img/shop/eats_better_minimum.jpg" />
-				<p class="popular_item">비건 티쿠키</p>
-			</li>
-			<li class="popular_item">
-				<img src="../img/shop/clean_ball_minimum.jpg" />
-				<p class="popular_item">제주 시카 <br>클렌징볼</p>
-			</li>
-		</ul>
-		<div class="popular_menu">
-			<div class="popular_item">
-				<img src="../img/shopdetail/1_3-1_minimum.jpg" />
-  				<p class="popular_text">가치솝 비누</p>
-			</div>
-			<div class="popular_item">
-				<img src="../img/shopdetail/4_puppy_pubbag_minimum.png" />
-  				<p class="popular_text2">애견 풉백 <br> 생분해 리필 </p>
-			</div>
-			<div class="popular_item">
-				<img src="../img/shopdetail/rabbit_tumblur_minimum.png" />
-  				<p class="popular_text">토끼 텀블러</p>
-			</div>
-			<div class="popular_item">
-				<img src="../img/shopdetail/finger_snap_minimum.png" />
-  				<p class="popular_text">손운동 기구</p>
-			</div>
-			<div class="popular_item">
-				<img src="../img/shopdetail/puppy_gum_minimum.jpg" />
-				<p class="popular_text">강아지 <br>개껌 간식</p>
-			</div>
-			<div class="popular_item">
-				<img src="../img/shop/coffee_holder_minimum.png" />
-				<p class="popular_text">드링크백 <br>텀블러 백</p>
-			</div>
-			<div class="popular_item">
-				<img src="../img/shop/eats_better_minimum.jpg" />
-				<p class="popular_item">비건 티쿠키</p>
-			</div>
-			<div class="popular_item">
-				<img src="../img/shop/clean_ball_minimum.jpg" />
-				<p class="popular_item">제주 시카 <br>클렌징볼</p>
-			</div>
-		</div> 
-	</div> -->
 
 	<%
 		// DB에서 전체 상품 목록을 읽어서 가져오기 
