@@ -138,7 +138,8 @@ public class pd_ReviewDAO {		// 데이터베이스 연결
 	// 글 내용을 불러오는 함수
 	public pd_Review getPd_Review(int pd_reviewId) {
 		String SQL = "SELECT * FROM pd_review WHERE pd_reviewId = ?";	// pd_reviewId가 특정한 숫자일 경우 진행 
-		 ArrayList<pd_Review> list = new ArrayList<pd_Review>();		// pd_Review 클래스 데이터들을 나열
+		pd_Review pd_rv = null;
+		ArrayList<pd_Review> list = new ArrayList<pd_Review>();		// pd_Review 클래스 데이터들을 나열
 		
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);	// conn 객체를 이용해서 SQL문장을 실행준비로 만듦.
@@ -146,7 +147,7 @@ public class pd_ReviewDAO {		// 데이터베이스 연결
 			rs = pstmt.executeQuery();		// 쿼리문 실행 결과값 저장 
 			
 			if (rs.next()) {	// 결과가 나올 경우
-				pd_Review pd_rv = new pd_Review();		// pd_Review 클래스의 데이터들을 호출 
+				pd_rv = new pd_Review();		// pd_Review 클래스의 데이터들을 호출 
 				pd_rv.setPd_reviewId(rs.getInt(1));
 				pd_rv.setPd_userid(rs.getString(2));
 				pd_rv.setPd_productId(rs.getString(3));
@@ -155,18 +156,21 @@ public class pd_ReviewDAO {		// 데이터베이스 연결
 				pd_rv.setPd_reviewContent(rs.getString(6));
 				// pd_rv.setPd_reviewStar(rs.getString(7));
 				pd_rv.setPd_reviewAvailable(rs.getInt(7));
-				System.out.println("출력 완료");
+				// System.out.println("출력 완료");
 				return pd_rv;	// 정보를 모두 담은 pd_rv를 리턴 
 			}
+			rs.close(); 
+			pstmt.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return null;	// 해당 글이 존재하지 않는 경우 null
+		return pd_rv;	// 해당 글이 존재하지 않는 경우 null
 	}
 	
 	// 게시글 수정 메소드 
 	public int modify(int pd_reviewId, String pd_reviewTitle, String pd_reviewContent) {
-		String SQL = "UPDATE pd_review SET pd_reviewTitle = ?, pd_reviewContent = ?, pd_reviewStar = ? WHERE pd_reviewId = ?";	// 실행할 쿼리문 
+		// String SQL2 = "UPDATE pd_review SET pd_reviewTitle = ?, pd_reviewContent = ?, pd_reviewStar = ? WHERE pd_reviewId = ?";	// 실행할 쿼리문 (원본)
+		String SQL = "UPDATE pd_review SET pd_reviewTitle = ?, pd_reviewContent = ?, WHERE pd_reviewId = ?";	// 실행할 쿼리문 
 		
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);	// DB에 저장된 데이터 관련 SQL 쿼리문 실행 준비 
@@ -183,7 +187,8 @@ public class pd_ReviewDAO {		// 데이터베이스 연결
 	
 	// 게시글 수정 메소드
 	public int update(int pd_reviewId, String pd_reviewTitle, String pd_reviewContent) {
-		String sql = "update pd_review set pd_reviewTitle = ?, pd_reviewContent = ?, pd_reviewStar = ? where pd_reviewId = ?";	// 실행할 쿼리문 
+		String sql = "update pd_review set pd_reviewTitle = ?, pd_reviewContent = ? where pd_reviewId = ?";	// 실행할 쿼리문 
+		//String sql2 = "update pd_review set pd_reviewTitle = ?, pd_reviewContent = ?, pd_reviewStar = ? where pd_reviewId = ?";	// 실행할 쿼리문 (원본)
 		
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);	// 쿼리문 실행 준비 	

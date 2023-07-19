@@ -149,43 +149,6 @@ initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 					<%
 						}
 					%>
-					
-						<!-- <tr class="light">
-							<td style="text-align: center;">1</td>
-							<td>리싸이프로 이용 가이드 (구매 전 필독★)</td>
-							<td>admin</td>
-							<td>2023.03.02</td>
-							<td>1</td>
-							<td>
-								<a href="notice_modify.jsp" class="btn btn-default" style="font-weight: bold; background-color: #eee;">
-    								수정하기
-    							</a>
-							</td>
-						</tr>
-						<tr class="light">
-							<td style="text-align: center;">2</td>
-							<td>사이즈 교환 1회 무료서비스 실시</td>
-							<td>admin</td>
-							<td>2023.03.02</td>
-							<td>2</td>
-							<td>
-								<a href="#" class="btn btn-default" style="font-weight: bold; background-color: #eee;">
-    								수정하기
-    							</a>
-							</td>
-						</tr>
-						<tr class="light">
-							<td style="text-align: center;">3</td>
-							<td>새벽배송 배송지역 변경</td>
-							<td>admin</td>
-							<td>2023.03.02</td>
-							<td>3</td>
-							<td>
-								<a href="#" class="btn btn-default" style="font-weight: bold; background-color: #eee;">
-    								수정하기
-    							</a>
-							</td>
-						</tr> -->
 					</tbody>
 				</table>
 				<!-- 테이블 영역 끝 -->

@@ -270,11 +270,10 @@
 			</tr>
 		</thead>
 		<tbody>	
-			<!-- 수정전 테스트 -->
-			<!--<tr class="white">
-				<td style="text-align: center;">3</td> -->
+			<tr class="white">
+				<td style="text-align: center;">3</td>
 <!-- 				<td style="float: left; text-decoration-line: none;">50% OFF 할인쿠폰 (생일 이벤트) 등급 무관하게 드려요!</td> -->
-				<!-- <td>50% OFF 할인쿠폰 (생일 이벤트) 등급 무관하게 드려요!</td>
+				<td>50% OFF 할인쿠폰 (생일 이벤트) 등급 무관하게 드려요!</td>
 				<td>2022.08.17 ~ 2023.02.17 (6개월)</td>
 				<td>N</td>
 			</tr>
@@ -289,7 +288,7 @@
 				<td>20% OFF 할인쿠폰</td>
 				<td>2023.08.12 ~ 2023.11.12 (3개월)</td>
 				<td>N</td>
-			</tr> -->
+			</tr>
 		</tbody>
 	</table>
 </body>

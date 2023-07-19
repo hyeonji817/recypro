@@ -46,14 +46,14 @@
             <input type="text" name="age" id="age" class="form-control" placeholder="나이를 입력하세요" required><br>
             
             <label for="gender" class="user-only">성별</label><br>            
-            <input type="radio" name="gender" value="male" checked>남성
-            <input type="radio" name="gender" value="female">여성            
+            <input type="radio" name="gender" value="남" checked>남성
+            <input type="radio" name="gender" value="여">여성            
             <br>
             <br>
             
-            <label for="jumin" class="user-only">주민등록번호</label><br>
+           <!-- <label for="jumin" class="user-only">주민등록번호</label><br>
             <input type="text" name="jumin" id="jumin1" maxlength="6" class="form-control" style="width: 130px;" placeholder="앞자리 입력" required>
-            <input type="text" name="jumin" id="jumin2" maxlength="7" class="form-control" style="width: auto;" placeholder="뒷자리 입력" required><br>
+            <input type="text" name="jumin" id="jumin2" maxlength="7" class="form-control" style="width: auto;" placeholder="뒷자리 입력" required><br> -->
             
             <label for="email" class="user-only">이메일</label>
             <input type="email" name="email" id="email" class="form-control" placeholder="ex) abc@gmail.com" required/>

@@ -353,9 +353,14 @@
 			</table>
 			<div class="button">
 				<a href="javascript:history.back();" class="btn btn-default" 
-					style="color: black; font-weight: 700; background-color: #9FFBF4;" role="button">이전</a> <a
+					style="color: black; font-weight: 700; background-color: #9FFBF4;" role="button">이전</a> 
+				<a
 					href="thanksCustomer.jsp" class="btn btn-default"
-					style="color: black; font-weight: 700; background-color: #9FFBF4;" role="button">주문완료</a> <a
+					style="color: black; font-weight: 700; background-color: #9FFBF4;" role="button">등록</a> 
+				<a
+					href="#" class="btn btn-default"
+					style="color: black; font-weight: 700; background-color: #9FFBF4;" role="button">결제</a>
+				<a
 					href="checkOutCancelled.jsp" class="btn btn-default"
 					style="color: black; font-weight: 700; background-color: #9FFBF4;" role="button">취소</a>
 			</div>

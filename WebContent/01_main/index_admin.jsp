@@ -35,15 +35,17 @@
     <header>
         <div class="nav">
             <a class="logo" href="../01_main/loginOK.jsp">리싸이프로</a>
-            <ul class="nav-right">
-                <li>
-                    <a class="link" href="../03_shop/Products.jsp">상품</a>
-                </li>
-                <%
+             <%
                 // 로그인 되어 있을 때, admin일 경우 admin 페이지로 이동 
                 	String id = (String)session.getAttribute("id");
                 
                 	if (id != null) {
+               %>
+            	<ul class="nav-right">
+                <li>
+                    <a class="link" href="../03_shop/Products.jsp">상품</a>
+                </li>
+                <% 
                 		if (id.equals("admin")) {
                 %>
                 <li>
@@ -51,18 +53,42 @@
                 </li>
                 <%
                 		}
-                	}
                 %>
                 <li>
                     <a class="link" href="../05_review/review.jsp">게시판</a>
+                    <ul class="submenu">
+                    	<li>
+                    		<a class="link" href="../05_review/review.jsp">목록</a>
+                    	</li>
+                    	<li>
+                    		<a class="link" href="../05_review/write.jsp">글쓰기</a>
+                    	</li>
+                    </ul>
                 </li>
                 <li>
                 	<a class="link" href="../06_customer/customer_main.jsp">고객센터</a>
+                	<ul class="submenu">
+                		<li>
+                			<a class="link" href="../06_customer/customer_notice.jsp">공지사항</a>
+                		</li>
+                		<li>
+                			<a class="link" href="../06_customer/customer_policy.jsp">운영정책</a>
+                		</li>
+                		<li>
+                			<a class="link" href="../06_customer/customer_question.jsp">자주묻는질문</a> 
+                		</li>
+                		<li>
+                			<a class="link" href="../06_customer/customer_consult.jsp">온라인 문의</a>
+                		</li>
+                		<li>
+                			<a class="link" href="../06_customer/customer_declare.jsp">신고하기</a>
+                		</li>
+                	</ul>
                 </li>
                 <li>
                 	<img src="../img/user.png" width="30" height="30" alt="logo" class="user-img">
                 	<!-- 옆에 아이디명이나 닉네임명을 구현해야 하는데 어케 하지... -->
-                    <ul class="submenu">
+                   <!-- <ul class="submenu">
                     	<li>
                             <a class="link" href="../03_shop/cart.jsp">장바구니</a>
                         </li>
@@ -72,9 +98,12 @@
                         <li>
                             <a class="link" href="../02_account/logoutAction.jsp">로그아웃</a>
                         </li>
-                    </ul>
+                    </ul> -->
                 </li>
             </ul>
+            <%
+                	}
+            %>
        </div>
        </header>
 </body>

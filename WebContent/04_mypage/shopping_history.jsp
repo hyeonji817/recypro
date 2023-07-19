@@ -154,24 +154,6 @@
 	font-weight: bold;
 }
 
-/** .return {
-	border-radius: 10px; 
-	height: 60px;
-	position: relative; 
-	left: -16%;
-	width: 250px;
-	border: 1px solid gray; 
-}
-
-.return a {
-	padding-top: 3%;
-	top: 23%; 
-	position: relative; 
-	left: 3%;
-	font-size: 17px;
-	font-weight: bold;
-} */
-
 .coupon_list {
 	border-radius: 10px; 
 	height: 60px;
@@ -326,11 +308,6 @@
 					<a href="mylevel.jsp">마이레벨</a>
 				</div>
 			</li>
-			<!-- <li>
-				<div class="return">
-					<a href="return_product.jsp">물품 반품신청</a>
-				</div>
-			</li> -->
 			<li>
 				<div class="coupon_list">
 					<a href="coupon_list.jsp">쿠폰함</a>

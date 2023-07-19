@@ -149,10 +149,12 @@
 	font-weight: 700;
 }
 
+/** 
 .coupon_set {
 	color: black;
 	font-weight: 700;
-}
+} 
+*/
 
 .sub_container {
 	left: 23%;
@@ -340,8 +342,6 @@
 </head>
 <body>
 	<%@ include file="../01_main/index.jsp"%>
-	<!-- 	<img src="../img/moon.jpg" class="main-img" alt="tip main"> -->
-
 	<%
 		String id = request.getParameter("id");
 		PrintWriter script = response.getWriter();
@@ -461,12 +461,14 @@
 						<a class="btn btn-default btn-lg" onclick="addToOrder()"
 							style="background-color: #b6f5f5; margin-right: 1%;"> <span
 							class="cart_into">주문하기 </span> <!-- '주문만하기'에서 '주문하기'로 명칭만 바꿈 -->
-						</a> <a href="#" class="btn btn-default btn-lg"
-							style="background-color: #b6f5f5; margin-right: 1%;"> <span
-							class="coupon_set">쿠폰적용 </span>
-						</a> <a href="pd_orderList.jsp" class="btn btn-default btn-lg"
-							style="background-color: #b6f5f5;"> <span
-							class="pd_orderlist">주문내역 조회 </span>
+						</a> 
+						<!-- <a href="#" class="btn btn-default btn-lg"
+							style="background-color: #b6f5f5; margin-right: 1%;"> 
+							<span class="coupon_set">쿠폰적용 </span>
+						</a>  -->
+						<a href="pd_orderList.jsp" class="btn btn-default btn-lg"
+							style="background-color: #b6f5f5;"> 
+							<span class="pd_orderlist">주문내역 조회 </span>
 						</a>
 					</div>
 				</form>
