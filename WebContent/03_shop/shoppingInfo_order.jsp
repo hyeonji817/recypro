@@ -187,11 +187,13 @@
 				<div class="col-sm-offset2 col-sm-10">
 					<div class="button">
 						<a href="cart.jsp?cartId=<%=request.getParameter("cartId")%>"
-							class="btn btn-secondary btn-lg" style="color: white;"
-							role="button">이전</a> <input type="submit"
-							class="btn btn-primary btn-lg" value="등록" /> <a
-							href="checkOutCancelled.jsp" class="btn btn-danger btn-lg"
-							style="color: white;" role="button">취소</a>
+							class="btn btn-default btn-lg" style="color: black; font-weight: bold; background-color: #9FFBF4;"
+							role="button">이전</a> 
+							<input type="submit"
+							class="btn btn-default btn-lg" style="color: black; font-weight: bold; background-color: #9FFBF4;" value="등록" /> 
+							<a
+							href="checkOutCancelled.jsp" class="btn btn-default btn-lg"
+							style="color: black; font-weight: bold; background-color: #9FFBF4;" role="button">취소</a>
 					</div>
 				</div>
 			</div>
