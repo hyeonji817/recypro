@@ -71,7 +71,7 @@
 	width: auto;
 }
 
-.user_check {
+/** .user_check {
 	border-radius: 10px; 
 	height: 60px;
 	position: relative; 
@@ -87,7 +87,7 @@
 	left: 3%;
 	font-size: 17px;
 	font-weight: bold;
-}
+} */
 
 .user_modify {
 	border-radius: 10px; 
@@ -161,6 +161,24 @@
 	font-weight: bold;
 }
 
+.orderlist {
+	border-radius: 10px; 
+	height: 60px;
+	position: relative; 
+	left: -15%; 
+	width: 250px;
+	border: 1px solid gray; 
+}
+
+.orderlist a {
+	padding-top: 3%;
+	top: 23%; 
+	position: relative; 
+	left: 3%;
+	font-size: 17px;
+	font-weight: bold;
+}
+
 .product_review {
 	border-radius: 10px; 
 	height: 60px;
@@ -205,13 +223,13 @@
 
 	<div class="side_menubar">
 		<ul>
-			<li>
+			<!-- <li>
 				<div class="user_check">
 					<a href="userinfo.jsp">
 						회원정보조회
 					</a>
 				</div>
-			</li>
+			</li> -->
 			<li>
 				<div class="user_modify">
 					<a href="updateUser.jsp">회원정보수정</a>
@@ -230,6 +248,11 @@
 			<li>
 				<div class="review_list">
 					<a href="review_history.jsp">게시판 작성 내역</a>
+				</div>
+			</li>
+			<li>
+				<div class="orderlist">
+					<a href="../03_shop/pd_orderList.jsp">주문내역 조회</a>
 				</div>
 			</li>
 			<li>

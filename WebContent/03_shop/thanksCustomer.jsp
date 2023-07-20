@@ -56,13 +56,13 @@
 <style>
 	.container {
 		margin-bottom: 5%;
+		margin-top: 5%;
 		font-weight: 700;
 	}
 
 	.display-3 {
-		margin-top: 10%;
+		margin-top: 12%;
 		font-weight: 700;
-		position: relative;
 	}
 	
 	#progress {
@@ -70,6 +70,7 @@
 	height: 250px;
 	position: relative;
 	bottom: 6%;
+	top: 1.5%;
 	margin: 0 auto;
 	display: block;
 }
@@ -93,8 +94,8 @@
 	border-radius: 123px;
 	position: relative;
 	top: 3.5%;
-	width: 67.5%;
-	height: 93%;
+	width: 65%;
+	height: 90.5%;
 	border: 2px solid black;
 }
 
@@ -123,8 +124,8 @@
 	overflow: hidden;
 	border-radius: 123px;
 	top: 3.5%;
-	width: 67.5%;
-	height: 93%;
+	width: 65%;
+	height: 90.5%;
 	position: relative;
 	border: 2px solid black;
 }
@@ -154,8 +155,8 @@
 	overflow: hidden;
 	border-radius: 123px;
 	top: 3.5%;
-	width: 67.5%;
-	height: 93%;
+	width: 65%;
+	height: 90.5%;
 	position: relative;
 	background: white;
 	border: 2px solid black;
@@ -202,7 +203,7 @@
 	
 	<!-- 페이지 제목명 -->
 	<div class="container">
-		<h1 class="display-3" style="position: relative; right: 10%;">주문 완료</h1>
+		<h1 class="display-3" style="position: relative; right: 5%;">주문 완료</h1>
 	</div>
 	
 	<!-- 진행 상황 -->

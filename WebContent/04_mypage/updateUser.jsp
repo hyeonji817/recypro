@@ -90,7 +90,7 @@
 	width: auto;
 }
 
-.user_check {
+/** .user_check {
 	border-radius: 10px; 
 	height: 60px;
 	position: relative; 
@@ -106,7 +106,7 @@
 	left: 3%;
 	font-size: 17px;
 	font-weight: bold;
-}
+} */
 
 .user_modify {
 	border-radius: 10px; 
@@ -173,6 +173,24 @@
 }
 
 .review_list a {
+	padding-top: 3%;
+	top: 23%; 
+	position: relative; 
+	left: 3%;
+	font-size: 17px;
+	font-weight: bold;
+}
+
+.orderlist {
+	border-radius: 10px; 
+	height: 60px;
+	position: relative; 
+	left: -15%; 
+	width: 250px;
+	border: 1px solid gray; 
+}
+
+.orderlist a {
 	padding-top: 3%;
 	top: 23%; 
 	position: relative; 
@@ -334,13 +352,13 @@ input .form-control {
 		<!-- 사이드 메뉴 -->
 		<div class="side_menubar">
 		<ul>
-			<li>
+			<!-- <li>
 				<div class="user_check">
 					<a href="userinfo.jsp">
 						회원정보조회
 					</a>
 				</div>
-			</li>
+			</li> -->
 			<li>
 				<div class="user_modify">
 					<a href="updateUser.jsp">회원정보수정</a>
@@ -359,6 +377,11 @@ input .form-control {
 			<li>
 				<div class="review_list">
 					<a href="review_history.jsp">게시판 작성 내역</a>
+				</div>
+			</li>
+			<li>
+				<div class="orderlist">
+					<a href="../03_shop/pd_orderList.jsp">주문내역 조회</a>
 				</div>
 			</li>
 			<li>
@@ -414,7 +437,7 @@ input .form-control {
 					<!-- 					get으로 값을 가져올때 disabled하면 무조건 값을 못가져옴. (null 발생) -->
 				</div>
 			</div>
-			<!-- <div class="form-group" style="height: 80px;">
+			<div class="form-group" style="height: 80px;">
 				<h5 for="gender" class="tap1">성별</h5>
 				<div class="tap2">
 					<label> 
@@ -428,7 +451,7 @@ input .form-control {
 					<span style="font-size: 20px;">여자</span>
 					</label>
 				</div>
-			</div> -->
+			</div> 
 			<!-- <div class="form-group">
 				<h5 for="regident_registration_number" class="tap1">주민등록번호</h5>
 				<div class="tap2">
