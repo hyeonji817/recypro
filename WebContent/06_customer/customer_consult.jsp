@@ -8,7 +8,6 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 <!-- bootstrap -->
-<!-- <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" /> -->
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
 <title>재활용품 전문점 : 리싸이프로 - 고객센터_온라인 상담문의</title>
@@ -26,6 +25,42 @@
 	font-weight: bold;
 	left: -17%;
 	font-size: 55px;
+}
+
+/** 우측 사이드 경로 */
+.side_path {
+	float: right; 
+	position: absolute; 
+	right: 17%; 
+	width: 300px; 
+	height: 50px;
+	margin-top: -9%;
+}
+
+.home_icon {
+	width: 40px; 
+	height: 40px; 
+	position: relative; 
+	top: 5px;
+	left: 7px;
+}
+
+.home_icon img {
+	width: 33px;
+	margin-left: 3px;
+}
+
+.sub_path {
+	position: relative;
+	display: block; 
+	float: right;
+	width: 240px; 
+	bottom: 10%;
+	height: 40px; 
+	top: -35px; 
+	padding-top: 4px;
+	font-size: 17px;
+	font-weight: bold;
 }
 
 .sub_content {
@@ -272,6 +307,16 @@
 			<h1 class="display-3"
 				style="font-weight: 700; text-shadow: 1px 1px 5px #bdbdbd; width: 1200px;">고객센터 - 온라인 상담/문의</h1>
 		</div>
+	</div>
+	
+	<!-- 사이드 경로 -->
+	<div class="side_path">
+		<div class="home_icon">
+			<img src="../img/shop/star.png" />
+		</div>
+		<span class="sub_path">
+			home > 고객센터 > 공지사항
+		</span>
 	</div>
 	
 	<!-- 안내문 -->

@@ -35,13 +35,13 @@
 }
 
 .sub_title {
-	font-weight: bold;
 	text-align: center;
 	color: black;
 }
 
 .sub_title h2 {
 	font-size: 26px;
+	font-weight: bold;
 }
 
 .sub_title2 {
@@ -53,6 +53,7 @@
 
 .sub_title2 h3 {
 	font-size: 22px;
+	font-weight: bold;
 }
 
 .consumer_info {
@@ -213,7 +214,7 @@
 	<div class="title">
 		<div class="container">
 			<h1 class="display-3"
-				style="font-weight: 700; text-shadow: 1px 1px 5px #bdbdbd;">신고하기</h1>
+				style="font-weight: 700; text-shadow: 1px 1px 5px #bdbdbd;">신고하기 안내</h1>
 		</div>
 	</div>
 	
