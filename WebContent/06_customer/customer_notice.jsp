@@ -51,6 +51,42 @@
 	display: block;
 }
 
+/** 우측 사이드 경로 */
+.side_path {
+	float: right; 
+	position: absolute; 
+	right: 17%; 
+	width: 300px; 
+	height: 50px;
+	margin-top: -3%;
+}
+
+.home_icon {
+	width: 40px; 
+	height: 40px; 
+	position: relative; 
+	top: 5px;
+	left: 7px;
+}
+
+.home_icon img {
+	width: 33px;
+	margin-left: 3px;
+}
+
+.sub_path {
+	position: relative;
+	display: block; 
+	float: right;
+	width: 240px; 
+	bottom: 10%;
+	height: 40px; 
+	top: -35px; 
+	padding-top: 4px;
+	font-size: 17px;
+	font-weight: bold;
+}
+
 /** 검색기능 */
 .cont-search {
 	float: right; 
@@ -58,7 +94,7 @@
 	right: 18%;
 	width: 40%; 
 	height: 70px;
-	top: 39%;
+	top: 43%;
 }
 
 .search_bar {
@@ -126,7 +162,15 @@
 		</div>
 	</div>
 	
-	<!-- 소규모 디렉토리 -->
+	<!-- 사이드 경로 -->
+	<div class="side_path">
+		<div class="home_icon">
+			<img src="../img/shop/star.png" />
+		</div>
+		<span class="sub_path">
+			home > 고객센터 > 공지사항
+		</span>
+	</div>
 	
 	<!-- 검색 영역 -->
 	<div class="cont-search">

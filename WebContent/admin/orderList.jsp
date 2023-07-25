@@ -117,6 +117,7 @@ initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 								<th>배송국가</th>
 								<th>주소</th>
 								<th>주문번호</th>
+								<th>배송현황</th>
 							</tr>
 						</thead>
 
@@ -133,6 +134,7 @@ initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 									<th><%=rs.getString("shopping_country")%></th>
 									<th><%=rs.getString("shopping_addressName")%></th>
 									<th><%=rs.getString("shopping_num")%></th>
+									<th></th>
 								</tr>						
 							</tbody>
 					<%

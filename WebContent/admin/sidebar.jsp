@@ -79,12 +79,54 @@
 				</div>
 			</div>
 		</li>
+		
+		<!-- 쿠폰 등록 페이지 -->
+		<li class="nav-item">
+			<a class="nav-link collapsed" href="../admin/admin_coupon.jsp" data-toggle="collapse" data-target="#collapseUtilities"
+			aria-expanded="true" aria-controls="collapseUtilities"><span>Coupon-Register</span>
+			</a>
+		</li>
+		
+		<!-- 쿠폰 지급 페이지 -->
+		<li class="nav-item">
+			<a class="nav-link collapsed" href="../admin/admin_coupon.jsp" data-toggle="collapse" data-target="#collapseUtilities"
+			aria-expanded="true" aria-controls="collapseUtilities"><span>Giving-Coupon</span>
+			</a>
+		</li>
 
 		<!-- Divider -->
 		<hr class="sidebar-divider">
 
 		<!-- Heading -->
 		<div class="sidebar-heading">Board</div>
+		
+		<!-- 게시판 관련 조회 페이지 -->
+		<li class="nav-item">
+			<a class="nav-link collapsed" href="admin_notice.jsp" data-toggle="collapse" data-target="#collapseMember"
+			aria-expanded="true" aria-controls="collapsePages"> <span>Review</span>
+			</a>
+			<div id="collapseMember" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+				<div class="bg-white py-2 collapse-inner rounded">
+					<h6 class="collapse-header">Review</h6>
+					<a class="collapse-item" href="../admin/member.jsp">Review List</a>
+					<div class="collapse-divider"></div>
+				</div>
+			</div>
+		</li>
+		
+		<!-- 게시판 신고 조회 페이지 -->
+		<li class="nav-item">
+			<a class="nav-link collapsed" href="admin_notice.jsp" data-toggle="collapse" data-target="#collapseMember"
+			aria-expanded="true" aria-controls="collapsePages"><span>Review declare</span>
+			</a>
+			<div id="collapseMember" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+				<div class="bg-white py-2 collapse-inner rounded">
+					<h6 class="collapse-header">Review declare</h6>
+					<a class="collapse-item" href="../admin/member.jsp">Review declare List</a>
+					<div class="collapse-divider"></div>
+				</div>
+			</div>
+		</li>
 		
 		<!-- 공지사항 관련 조회 페이지 -->
 		<li class="nav-item">

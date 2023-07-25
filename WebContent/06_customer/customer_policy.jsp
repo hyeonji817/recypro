@@ -28,6 +28,42 @@
 	display: block;
 }
 
+/** 우측 사이드 경로 */
+.side_path {
+	float: right; 
+	position: absolute; 
+	right: 17%; 
+	width: 300px; 
+	height: 50px;
+	margin-top: -5%;
+}
+
+.home_icon {
+	width: 40px; 
+	height: 40px; 
+	position: relative; 
+	top: 5px;
+	left: 7px;
+}
+
+.home_icon img {
+	width: 33px;
+	margin-left: 3px;
+}
+
+.sub_path {
+	position: relative;
+	display: block; 
+	float: right;
+	width: 240px; 
+	bottom: 10%;
+	height: 40px; 
+	top: -35px; 
+	padding-top: 4px;
+	font-size: 17px;
+	font-weight: bold;
+}
+
 .first_policy {
 	margin: 0 auto;
 	width: 1350px;
@@ -261,6 +297,16 @@
 			<h1 class="display-3"
 				style="font-weight: 700; text-shadow: 1px 1px 5px #bdbdbd;">운영정책</h1>
 		</div>
+	</div>
+	
+	<!-- 사이드 경로 -->
+	<div class="side_path">
+		<div class="home_icon">
+			<img src="../img/shop/star.png" />
+		</div>
+		<span class="sub_path">
+			home > 고객센터 > 공지사항
+		</span>
 	</div>
 	
 	<!-- 제1조 (목적) -->
