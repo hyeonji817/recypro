@@ -93,29 +93,11 @@
 	width: auto;
 }
 
-/** .user_check {
-	border-radius: 10px; 
-	height: 60px;
-	position: relative; 
-	left: -15.5%;
-	width: 250px;
-	border: 1px solid gray; 
-}
-
-.user_check a {
-	padding-top: 3%;
-	top: 23%; 
-	position: relative; 
-	left: 3%;
-	font-size: 17px;
-	font-weight: bold;
-} */
-
 .user_modify {
 	border-radius: 10px; 
 	height: 60px;
 	position: relative; 
-	left: -15.5%;
+	left: -22%;
 	width: 250px;
 	border: 1px solid gray; 
 }
@@ -133,7 +115,7 @@
 	border-radius: 10px; 
 	height: 60px;
 	position: relative; 
-	left: -15.5%;
+	left: -22%;
 	width: 250px;
 	background-color: #eee;
 	border: 1px solid gray; 
@@ -148,29 +130,11 @@
 	font-weight: bold;
 }
 
-/** .return {
-	border-radius: 10px; 
-	height: 60px;
-	position: relative; 
-	left: -15.5%;
-	width: 250px;
-	border: 1px solid gray; 
-}
-
-.return a {
-	padding-top: 3%;
-	top: 23%; 
-	position: relative; 
-	left: 3%;
-	font-size: 17px;
-	font-weight: bold;
-} */
-
 .coupon_list {
 	border-radius: 10px; 
 	height: 60px;
 	position: relative; 
-	left: -15.5%; 
+	left: -22%; 
 	width: 250px;
 	border: 1px solid gray; 
 }
@@ -184,29 +148,11 @@
 	font-weight: bold;
 }
 
-/** .shopping_list {
-	border-radius: 10px; 
-	height: 60px;
-	position: relative; 
-	left: -15.5%; 
-	width: 250px;
-	border: 1px solid gray; 
-}
-
-.shopping_list a {
-	padding-top: 3%;
-	top: 23%; 
-	position: relative; 
-	left: 3%;
-	font-size: 17px;
-	font-weight: bold;
-} */
-
 .review_list {
 	border-radius: 10px; 
 	height: 60px;
 	position: relative; 
-	left: -15.5%; 
+	left: -22%; 
 	width: 250px;
 	border: 1px solid gray; 
 }
@@ -224,7 +170,7 @@
 	border-radius: 10px; 
 	height: 60px;
 	position: relative; 
-	left: -15%; 
+	left: -22%; 
 	width: 250px;
 	border: 1px solid gray; 
 }
@@ -242,7 +188,7 @@
 	border-radius: 10px; 
 	height: 60px;
 	position: relative; 
-	left: -15.5%;
+	left: -22%;
 	width: 250px;
 	border: 1px solid gray; 
 }
@@ -336,21 +282,11 @@
 					<a href="mylevel.jsp">마이레벨</a>
 				</div>
 			</li>
-			<!-- <li>
-				<div class="return">
-					<a href="return_product.jsp">물품 반품신청</a>
-				</div>
-			</li> -->
 			<li>
 				<div class="coupon_list">
 					<a href="coupon_list.jsp">쿠폰함</a>
 				</div>
 			</li>
-			<!-- <li>
-				<div class="shopping_list">
-					<a href="shopping_history.jsp">쇼핑내역</a>
-				</div>
-			</li> -->
 			<li>
 				<div class="review_list">
 					<a href="review_history.jsp">게시판 작성 내역</a>

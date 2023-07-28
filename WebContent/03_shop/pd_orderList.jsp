@@ -138,14 +138,14 @@ initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 					<th><%=rs.getString("shopping_name") %></th>
 					<th>
 						<a href="Product_write.jsp?id=<%=rs.getString("shopping_productId")%>">
-							<%--=rs.getString("shopping_productId") --%>
-						<% if(cartList3 != null) { %>
+							<%=rs.getString("shopping_productId") %>
+						<%-- if(cartList3 != null) { --%>
 							<%-- for (int i=0; i<cartList3.size(); i++) { --%>			
 								<%-- if (rs.next()) { --%>		
-									<%=rs.getString("shopping_productId") %>
+									<%--4=rs.getString("shopping_productId") --%>
 								<%-- } --%>
 							<%-- } --%>
-						<% } %>
+						<%-- } --%>
 						</a>
 					</th>
 					<th><%=rs.getString("shopping_date") %></th>
@@ -175,6 +175,11 @@ initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 			}
 			%>
 		</table>	
+	</div>
+	<!-- 뒤로가기 버튼 -->
+	<div class="button">
+		 <input type="button" class="btn btn-default pull-right btn-lg" value="뒤로가기" onclick="history.back();" 
+		 style="background-color: #b6f5f5; font-weight: bold; color: black; position: relative; right: 22%; bottom: 10%;">
 	</div>
 </body>
 </html>

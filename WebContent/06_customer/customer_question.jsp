@@ -132,7 +132,7 @@
 	<!-- 사이드 경로 -->
 	<div class="side_path">
 		<div class="home_icon">
-			<img src="../img/shop/star.png" />
+			<img src="../img/shop/home.png" />
 		</div>
 		<span class="sub_path">
 			home > 고객센터 > 공지사항
