@@ -101,19 +101,19 @@
 				<!-- 글쓰기 버튼 생성 -->
 				<span class="submit">
 					<input type="submit" class="btn btn-defulat pull-right" style="background-color: #9FFBF4; font-weight: bold;" value="글쓰기">
-					<%
+					<%--
 						PrintWriter script = response.getWriter();
 					
 						if (session.getAttribute("id") != null) {
 							id = (String)session.getAttribute("id");
 						
-					%>
-					<input type="submit" class="btn btn-default pull-right" style="background-color: #9FFBF4; font-weight: bold;" value="수정하기">
-					<%
+					--%>
+					<!-- <input type="submit" class="btn btn-default pull-right" style="background-color: #9FFBF4; font-weight: bold;" value="수정하기"> -->
+					<%--
 						} else {
 							script.println("location.href = '../02_account/login.jsp'");
 						}
-					%>
+					--%>
 					<a href="#" class="btn btn-default pull-right" style="background-color: #9FFBF4; color: black; font-weight: bold;">취소하기</a>
 				</span>
 			</form>
