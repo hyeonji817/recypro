@@ -35,6 +35,41 @@ initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 .user_list {
 	margin-right: 20%;
 }
+
+.giving_coupon {
+	width: 1000px; 
+	min-height: 600px; 
+	position: relative; 
+	top: 60px; 
+	margin: 0 auto; 
+	background-color: #eee;
+}
+
+.form-group {
+	margin-bottom: 5%; 
+}
+
+.col-sm-2 b {
+	width: 150px; 
+	display: inline-block; 
+	padding-right: 22%; 
+	padding-top: 10%; 
+	font-size: 17px;
+}
+
+.col-sm-6 {
+	width: 330px; 
+	display: inline-block;
+	padding-top: 11.5px;
+	font-size: 17px;
+	position: relative; 
+	left: 10%;
+}
+
+.admin_button {
+	position: relative;
+	top: -68px;
+}
 </style>
 </head>
 <body>
@@ -67,56 +102,64 @@ initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 				
 				<!-- Page Heading -->
     			<div class="d-sm-flex align-items-center justify-content-between mb-4">
-        			<h1 class="h3 mb-0 text-black-800" style="top: 12%; margin-top: 2%; margin-left: 3%; font-weight: 700;">Member</h1>
+        			<h1 class="h3 mb-0 text-black-800" style="top: 12%; margin-top: 2%; margin-left: 3%; font-weight: 700;">Giving Coupon</h1>
     			</div>
-
-					<!-- Content Row (표를 만들 영역) -->
-					<div class="row">
-						<!-- Earning (Monthly) Card Example -->
-						<div class="col-xl-3 col-md-6 mb-4">
-							<!-- 사용자 테이블 생성 -->
-							<div class="container-fluid">
-								<div class="row mb-5">
-									<div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
-										<div class="row">
-
-										</div>
-									</div>
-								</div>
+					
+				<h2 class="title" style="top: 12%; margin-top: 2%; margin-left: 3%; font-weight: 700;">쿠폰지급</h2>
+				
+				<!-- 등록한 쿠폰정도 레이아웃 -->
+				<div class="giving_coupon">
+					<form action="#" name="register_Cp" class="form-horizontal" method="post" enctype="multipart/form-data"
+					style="margin: 0 auto; position: relative; width: 750px; min-height: 400px; top: 80px;">
+						<!-- 쿠폰명 -->
+						<div class="form-group row">
+							<label class="col-sm-2"><b>쿠폰명</b></label>
+							<div class="col-sm-6">
+								<b>생일 50% 할인</b>
 							</div>
 						</div>
-					</div>
-					
-					<h2 class="title" style="top: 12%; margin-top: 2%; margin-left: 3%; font-weight: 700;">회원정보</h2>
-					<table class="table bg-light text-center" border="1" style="margin: 0 auto; width: 1000px; margin-top: 7%;">
-						<thead>
-							<tr class="text-muted">
-								<th>이름</th>
-								<th>아이디</th>
-								<th>나이</th>
-								<th>성별</th>
-								<th>이메일</th>
-								<th>등급</th>
-								<th>잔여쿠폰</th>
-							</tr>
-						</thead>
-						<tbody>
-						<!-- rs.next while문 사용팁 : https://iinomad.com/157 -->
-							<% while (rs.next()) { %>	<!-- 다음 행으로 이동하여 결과값 출력할 때까지 반복적으로 형성 -->
-							<tr>
-								<th><%=rs.getString("name")%></th> 
- 								<th><%=rs.getString("id")%></th> 
-								<th><%=rs.getString("age")%></th>
-								<th><%=rs.getString("gender")%></th>
-								<th><%=rs.getString("email")%></th> 
-								<th></th>
-								<th></th>
-							</tr> 
-							<%
-								}
-							%>
-						</tbody>
-					</table>
+						
+						<!-- 지급받을 아이디 -->
+						<div class="form-group row">
+							<label class="col-sm-2"><b>지급받을 아이디</b></label>
+							<div class="col-sm-6">
+								<b>witch0817</b>
+							</div>
+						</div>
+						
+						<!-- 할인률 설정 -->
+						<div class="form-group row">
+							<label class="col-sm-2"><b>할인률 설정</b></label>
+							<div class="col-sm-6">
+								<b>구매한 상품 가격의 50%</b>
+							</div>
+						</div>
+						
+						<!-- 사용기간 -->
+						<div class="form-group row">
+							<label class="col-sm-2"><b>사용기간</b></label>
+							<div class="col-sm-6">
+								<b>2023-03-01 00:00 - 2023-09-01 23:59</b>
+							</div>
+						</div>
+						
+						<!-- 기준금액 -->
+						<div class="form-group row">
+							<label class="col-sm-2"><b>기준금액</b></label>
+							<div class="col-sm-6">
+								<b>50,000원 이상 구매 시 사용가능</b>
+							</div>
+						</div>
+						
+						<!-- 혜택구분 -->
+						<div class="form-group row">
+							<label class="col-sm-2"><b>혜택구분</b></label>
+							<div class="col-sm-6">
+								<b>생일 50% 할인</b>
+							</div>
+						</div>
+					</form>
+				</div>
 					
 				</div>
 			</div>
@@ -124,10 +167,10 @@ initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 	</div>
 	
 	<div class="admin_button">
-		<a href="#" class="btn btn-default btn-lg pull-right" style="font-weight: bold; color: white; background-color: rgb(11, 103, 255); 
-		position: relative; margin-top: -10%; margin-right: 24%;">쿠폰지급</a>
+		<a href="coupon-register.jsp" class="btn btn-default btn-lg pull-right" style="font-weight: bold; color: white; background-color: rgb(11, 103, 255); 
+		position: relative; margin-right: 24%;">수정</a>
 		<a href="#" class="btn btn-default btn-lg pull-right" style="font-weight: bold; color: white; background-color: rgb(11, 103, 255);
-		position: relative; margin-top: -10%; margin-right: 17%;">관리자 홈</a>
+		position: relative; margin-right: -8%;">발급</a>
 	</div>
 </body>
 </html>

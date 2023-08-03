@@ -133,7 +133,7 @@ initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 				
 				<!-- 버튼영역 -->
 				<div class="admin_button">
-					<a href="coupon_create.jsp" class="btn btn-default btn-lg pull-right" style="font-weight: bold; color: white; background-color: rgb(11, 103, 255);">등록하기</a>
+					<a href="coupon-register.jsp" class="btn btn-default btn-lg pull-right" style="font-weight: bold; color: white; background-color: rgb(11, 103, 255);">등록하기</a>
 					<a href="#" class="btn btn-default btn-lg pull-right" style="font-weight: bold; color: white; background-color: rgb(11, 103, 255);">관리자 홈</a>
 				</div>
 			</div>
