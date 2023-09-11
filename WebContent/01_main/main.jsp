@@ -45,8 +45,8 @@
 	<img src="../img/nature.jpg" class="main-img" alt="tip main">
 
 	<!-- 배너 영역 -->
-	<div class="wrap-center">
-		<div class="banner-container">
+	<div class="wrap-center" id="wrap-center">
+		<div class="banner-container" id="banner-container">
 			<div class="img_wrap">
 				<ul class="rolling_imgs" style="height: 500px; padding-bottom: 0px; margin-bottom: 0px;">
 					<li>
@@ -134,21 +134,24 @@
 		
 			
 		</div>
-		<!-- 원본 -->
-	</div>
 
 	<!-- 쇼핑 이벤트 레이아웃 -->
 	<div class="coupon" id="event">
 		<ul>
-			<li><span class="gift"> <img src="../img/shop/gift.png">
-			</span> <span class="wallet"> <img src="../img/shop/wallet_1.png">
-			</span></li>
+			<li>
+				<span class="gift"> 
+					<img src="../img/shop/gift.png">
+				</span> 
+				<span class="wallet"> 
+					<img src="../img/shop/wallet_1.png">
+				</span>
+			</li>
 			<li>
 				<div class="event_title">
 					<h2>즐거운 쇼핑 Tip ★</h2>
 				</div>
 				<div class="event_info">
-					<a href="event.jsp" style="font-weight: 700;" class="btn btn-dark"
+					<a href="event.jsp" style="font-weight: 700; color: white;" class="btn btn-dark"
 						id="button_info" role="button"> 더 많은 혜택 보러가기 ▶ </a>
 				</div>
 			</li>
