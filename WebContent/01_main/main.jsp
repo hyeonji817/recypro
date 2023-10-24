@@ -192,7 +192,11 @@
 	</div>
 
 	<script type="text/javascript">
-		
+		$(function() {
+			$("#button_info").click(function() {
+				alert("인기상품 구매해주세요");
+			});
+		});
 	</script>
 
 	<script src="../js/main.js"></script>
@@ -202,8 +206,6 @@
 	<script src="../js/jquery.min.js"></script>
 	<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/jquery.slick/1.8.1/slick.min.js"></script>
-	<script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 </body>
 <footer>
