@@ -70,15 +70,11 @@
 			// 반응형 레이아웃 처리
 		}
 		
-/** CSS 처리 jQuery */
-		// 상단배너 최상위 레이아웃
-		$("#wrap_center").css("width", "100%");
+		/** CSS 처리 jQuery */
+		$(function() {
+			$(".sub").click(function() {
+				alert("인기상품 구매해주세요");
+			});
+		});
 		
-		// 상단배너 첫 번째 하위 레이아웃 
-		$("#banner-container").css("margin", "0 auto");
-		$("#banner-container").css("margin-top", "150");
-		$("#banner-container").css("margin-bottom", "200");
-		$("#banner-container").css("width", "1000");
-		$("#banner-container").css("height", "500");
-		$("#banner-container").css("overflow", "hidden");
 		

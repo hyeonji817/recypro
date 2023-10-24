@@ -358,7 +358,7 @@ h6 {
 	float: right;
 	margin-top: 3%;
 	bottom: 48%;
-	margin-right: 13.5%;
+	margin-right: 13.5% !important;
 	position: absolute;
 	right: 25.5%;
 }
@@ -394,13 +394,13 @@ h6 {
 
 /** 신규가입 레이아웃 */
 .join_event {
-	width: 141%;
-	background: #B3F9EB;
-	height: 210px;
+	width: 141% !important;		/** main.css와 요소가 겹치니까 main.css 요소만 반영되니 !important 사용함 */
+	background: #B3F9EB !important;
+	height: 200px !important;
 	margin: 0 auto;
 	position: relative;
-	margin-top: 10%;
-	left: 26%;
+	margin-top: 6% !important;
+	margin-left: 26%;
 }
 
 /** 신규가입 제목 */
@@ -456,14 +456,15 @@ h6 {
 
 /** 회원가입 이동 폰트 설정 */
 .join_go h6 {
-	color: black;
-	width: 200px;
-	position: relative;
-	margin: 0 auto;
-	right: -5%;
-	top: 200%;
-	font-weight: bold;
-	padding-top: 8%;
+	color: black !important;
+	width: 200px !important;
+	position: relative !important;
+	margin: 0 auto !important;
+	right: -22% !important;
+	top: 200% !important;
+	height: 200px;
+	font-weight: bold !important;
+	padding-top: 8% !important;
 }
 
 footer {
