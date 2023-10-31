@@ -106,12 +106,14 @@ a:visited {
 	position: relative;
 }
 
+/** 상품가격 레이아웃 */ 
 .sub_menu a {
 	margin-top: 5%;
 	font-weight: 700;
 	position: relative;
 }
 
+/** 가격표시 */ 
 h6 {
 	top: 2%;
 	width: 100px;
@@ -121,142 +123,10 @@ h6 {
 	position: relative;
 }
 
+/** 상세정보 버튼 버튼색상 */ 
 .btn btn-light {
 	text-shadow: none;
 	font-weight: 700;
 }
 
-.side_bar {
-	float: right;
-	position: relative;
-	right: -35%;
-	height: 1000px;
-	bottom: 80%;
-	width: 100px;
-}
-
-.scroll_bar {
-	width: 100px;
-	height: 450px;
-	/*   		right: 20%;   */
-	bottom: 135%;
-	float: right;
-	position: absolute;
-	background: #eee;
-}
-
-.mini_menu li {
-	right: 30%;
-	border-bottom: 1px solid;
-	top: 20%;
-	margin-top: 30%;
-	margin-bottom: 30%;
-	position: relative;
-}
-
-.search {
-	margin-top: 27%;
-}
-
-.cart {
-	margin-right: 7%;
-}
-
-
-.container {
-    margin: 0 auto;
-}
-
-.ul_wrap{
-	margin:0 10px 7px;	
-}
-	
-.allproduct_category{
-	list-style: none;
-	width:492px;
-	overflow:hidden;
-	font-color: #fff;
-}
-	
-.category{
-	text-align:center;
-	line-height:44px;
-	width:76px;
-	height:44px;
-	background:#CEBEA7;
-	color:#fff;
-	border-radius:25px;
-	float:left;
-	margin-right:6px;
-	font-color: #fff;
-}
-
-.category:last-child{
-	font-color: #fff;
-	margin-right:0;
-}
-
-.active{
-	background:#172F50;
-}
-
-.allproduct_top{
-	margin:0 10px 0;
-	position:sticky; 
-	top:0px;
-	z-index:80;
-}
-	
-.allproduct_top h3 {
-	margin-left: 40px;
-}
-
-.allproduct_slide{
-	list-style: none;
-}
-	
-.allproduct_slide_ul{
-	list-style: none;
-	width:899px;
-	overflow:hidden;	
-}
-	
-.allproduct_slide_ul2{
-	width:639px;
-	overflow:hidden;
-}
-	
-.allproduct_slide_ul_li{
-	width:123px;
-	height:112px;
-	margin-right:6px;
-	float:left;
-	font-size:15px;
-	margin-top:13px;
-	list-style: none;
-}
-
-.allproduct_slide_ul_li:last-child{
-	margin-right:0;
-}
-
-.allproduct_slide_ul_li img{
-	width:123px;
-	height:69px;
-	list-style: none;
-}
-
-.allproduct_product_ul{
-	overflow:hidden;
-	width:1800px;
-}
-	
-.allproduct_product_ul_li{
-	float:left;
-	margin-right: 50px;
-	width:350px;
-	height:300px;
-	padding:30px 10px;
-	position: relative;
-}
 	
