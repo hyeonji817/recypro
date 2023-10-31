@@ -20,7 +20,7 @@
 <head>
 <meta charset="UTF-8">
 <title>재활용품 전문점 : 리싸이프로</title>
-<!-- <link rel="stylesheet" type="text/css" href="../css/main.css"> -->
+<link rel="stylesheet" type="text/css" href="../css/login_admin.css"> 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -133,7 +133,7 @@
 	</div>
 	
 	<!-- 쇼핑 이벤트 레이아웃 -->
-	<div class="coupon" id="event">
+	<div class="coupon" id="event" style="position: relative; top: 50px; margin-bottom: 0px;">
 		<ul>
 			<li>
 				<span class="gift">
