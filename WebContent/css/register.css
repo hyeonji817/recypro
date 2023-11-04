@@ -15,14 +15,71 @@
       }
 }
 
+/** 폰트 지정 */
+@font-face {
+  src: url("../fonts/BMJUA_otf.otf");
+  font-family: Jua;
+}
+
+@font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'S-CoreDream-5Medium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SDSamliphopangche_Outline';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/** 로고 색상 결정 요소 */
+a:visited,
+a:hover,
+a:focus,
+a:active {
+      color:  rgb(53, 53, 53);
+}
+
 body {
   	  background-color: rgb(178, 204, 255); 
 }
 
+.logo {
+    font-family: 'SDSamliphopangche_Outline';
+    font-style: bold !important; /** 이거 적용 안 됨*/
+    width: 600px;
+    position: absolute;
+    text-align: center;
+    display: inline-block;
+    margin-right: 150px;
+    padding-right: 320px;
+    top: 6%;
+    right: -290px;
+    font-weight: 700;
+}
+
 .login {
       position: relative;
-      margin: 50px auto;
-      width: 300px;
+      margin: 0 auto;
+      border: 5px solid #eee;
+      top: 50px; 
+      bottom: 30px;
+      width: 650px;
+      height: 1000px;
       padding: 33px 25px 29px;
 
+}
+
+.user-only {
+	font-weight: bold !important;
 }

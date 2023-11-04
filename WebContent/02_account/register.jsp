@@ -25,14 +25,15 @@
 </head>
 <body>
 	<div class="login">
+		<h1 class="logo">
+			<a href="../01_main/main.jsp">리싸이프로</a>
+		</h1>
 		<form method="POST" action="register_action.jsp" role="submit">
-		<br>
-        <br>
-        <br>
-        <h1 class="h3 mb-3 font-weight-normal" style="font-family: 'S-CoreDream-7ExtraBold'; font-size: 40px; color: rgb(53, 53, 53);">회원가입</h1>
-        <br>
-        <br>
-        <div style="font-family: 'S-CoreDream-3Light'; width: 300px;">
+        <h1 class="h3 mb-3 font-weight-normal" style="font-family: 'S-CoreDream-7ExtraBold'; font-size: 40px; 
+        color: rgb(53, 53, 53); font-weight: bold !important; position: relative; top: 30px; text-align: center; margin-top: 90px; 
+        padding-top: 60px;">회원가입</h1>
+        
+        <div style="font-family: 'S-CoreDream-3Light'; width: 330px; margin: 0 auto; positiob: relative; padding-top: 10%;">
         	<label for="id" class="user-only">ID</label>
             <input type="text" name="id" id="id" class="form-control" placeholder="username" required autofocus><br>
             
@@ -50,18 +51,14 @@
             <input type="radio" name="gender" value="여">여성            
             <br>
             <br>
-            
-           <!-- <label for="jumin" class="user-only">주민등록번호</label><br>
-            <input type="text" name="jumin" id="jumin1" maxlength="6" class="form-control" style="width: 130px;" placeholder="앞자리 입력" required>
-            <input type="text" name="jumin" id="jumin2" maxlength="7" class="form-control" style="width: auto;" placeholder="뒷자리 입력" required><br> -->
-            
+           
             <label for="email" class="user-only">이메일</label>
             <input type="email" name="email" id="email" class="form-control" placeholder="ex) abc@gmail.com" required/>
             <br>
             
             <button class="btn btn-lg btn-dark btn-block" type="submit" style="font-size: 18px; background-color: rgb(53, 53, 53);">회원가입</button>
             <button class="btn btn-lg btn-dark btn-block primary" type="submit" style="font-size: 18px; background-color: rgb(53, 53, 53);">
-            	<a href="login.jsp">뒤로가기</a>
+            	<a href="login.jsp" style="color: white;">뒤로가기</a>
             </button>
         </div>
     </form>

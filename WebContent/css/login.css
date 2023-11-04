@@ -59,35 +59,15 @@ html, body {
 .login {
       width: 500px;
       height: 600px;
-      
       padding: 33px 25px 29px;
       color: rgb(53, 53, 53);
       font-size: 18px;
       font-family: Jua;
       border: 5px solid #eee;
-     
       position: absolute;
       top: 50%;
 	  left : 50%;
 	  transform: translate(-50%, -50%);
-	  
-	  /** Test.1 */
-/*       display: table; */
-/*       margin-right: auto; */
-/*       margin-left: auto; */
-/* 	  text-align: center; */
-      
-      /** Test.2 */
-/*       display : flex; */
-/*       justify-content: center; */
-/*       align-items: center; */
-      
-      /** Test.3 */
-/*       width : 100%; */
-/*       max-width : 446px; */
-/*       margin : auto; */
-      
-
 }
 
 #login_title {
@@ -106,23 +86,16 @@ html, body {
 .login_body {
       font-family: 'S-CoreDream-3Light';
       position: absolute; 
-      /** margin-right: 30px;
-      margin-top: 20px;
-      margin-left: 30px; 
-      margin-bottom: 20px; */ 
       margin: 30px 20px;
-/*       border: 1px solid #eee; */
       width: 300px;
       left: 15%;
 }
 
 .logo {
     font-family: 'SDSamliphopangche_Outline';
-/*     font-size: 30px; */
     font-style: bold; /** 이거 적용 안 됨*/
     width: 600px;
     position: absolute;
-/*     line-height: 80px; */
     text-align: center;
     display: inline-block;
     margin-right: 150px;
