@@ -1,10 +1,16 @@
 # recypro
 [소개] 
+
 리싸이프로 : 재활용품으로 만든 상품을 판매 및 운영관리하는 웹 페이지 
+
 사용한 개발툴 : 이클립스
+
 사용하는 웹 서버 환경 : Tomcat 9.062 
+
 사용한 언어 : JSP, JAVA, CSS3, Javascript 
+
 사용한 DB : MySQL
+
 
 1. 메인페이지
 ![image](https://github.com/hyeonji817/recypro/assets/75878010/c78b713f-71a7-49df-85f2-0d10f9be816f)
@@ -73,6 +79,7 @@
 
 ![image](https://github.com/hyeonji817/recypro/assets/75878010/ce612f49-8d84-488e-9560-c2d1b5db2445)
 - 주문완료 처리됨 
+
 
 4. 마이페이지
 
