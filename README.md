@@ -12,7 +12,7 @@
 사용한 DB : MySQL
 
 
-1. 메인페이지
+**1. 메인페이지**
 ![image](https://github.com/hyeonji817/recypro/assets/75878010/c78b713f-71a7-49df-85f2-0d10f9be816f)
 ![image](https://github.com/hyeonji817/recypro/assets/75878010/c19adf21-b717-4879-8731-cb9731fa3d3f)
 ![image](https://github.com/hyeonji817/recypro/assets/75878010/4671b760-0e49-4d55-ac29-0dea9c00a627)
@@ -23,7 +23,8 @@
 - 관리자 계정으로 로그인한 페이지일 경우, 관리자 페이지로 이동할 수 있음 
 
 
-2. 계정페이지
+
+**2. 계정페이지**
 
 ![image](https://github.com/hyeonji817/recypro/assets/75878010/a2537ba9-2583-4dda-a09c-efe52bdd452c)
 ![image](https://github.com/hyeonji817/recypro/assets/75878010/c8896a5e-24ef-47be-908c-6f4214d91e1e)
@@ -35,7 +36,7 @@
 - 회원가입 처리 시, 회원정보가 DB로 저장 
 
 
-3. 상품페이지
+**3. 상품페이지**
 - 구성페이지 : 상품리스트, 상품상세, 상품리뷰, 상품주문
 
 1) 상품리스트
