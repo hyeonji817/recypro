@@ -72,6 +72,7 @@
 - 상품상세 페이지 내, '주문하기' 버튼 클릭 시 조회할 수 있는 페이지
 - '장바구니' 버튼을 거쳐서도 주문 가능
 - 구매할 상품에 대한 정보와 정보입력란 띄워짐 (배송지와 주문자 성명 등을 입력하면 됨)
+- 정보를 입력하고 다음 페이지로 진행됨과 동시에, 해당 인적사항들이 DB에 저장됨  
 
 
 ![image](https://github.com/hyeonji817/recypro/assets/75878010/00b98c7a-4546-4b3b-9a6e-ae8cdbf515eb)
@@ -80,11 +81,58 @@
 
 ![image](https://github.com/hyeonji817/recypro/assets/75878010/ce612f49-8d84-488e-9560-c2d1b5db2445)
 - 주문완료 처리됨 
+- 주문일자와 주문번호 출력 
 
 
-4. 마이페이지
+![image](https://github.com/hyeonji817/recypro/assets/75878010/67429144-bb84-4a88-a6a8-53c1155efba2)
+- 주문했던 상품 데이터들이 DB에 저장되며, 해당 데이터 조회 가능 
 
-5. 게시판페이지
+
+**4. 마이페이지**   
+
+![image](https://github.com/hyeonji817/recypro/assets/75878010/0752c953-9248-42a8-836e-2866aac85514)
+
+- 회원정보 및 관련 이력 조회 가능한 페이지 
+
+
+![image](https://github.com/hyeonji817/recypro/assets/75878010/36fbd538-42bb-4efa-b070-7454afe0b613)
+
+- 회원정보를 수정하거나 관리 
+
+
+![image](https://github.com/hyeonji817/recypro/assets/75878010/dd68d735-39f9-4bf5-bc05-ee456a76b19d)
+
+- 본인이 구매횟수에 따라 등급이 결정
+
+
+![image](https://github.com/hyeonji817/recypro/assets/75878010/68fa50a6-bfd7-40be-91ad-091d8c1281c1)
+
+- 보유한 쿠폰 조회 
+
+
+![image](https://github.com/hyeonji817/recypro/assets/75878010/db5956bb-3645-488c-9c86-8cdd21193456)
+
+- 작성한 게시글 조회 
+
+![image](https://github.com/hyeonji817/recypro/assets/75878010/43a01cd6-a7b1-400b-8ee7-a33a68e4eb3e)
+
+- 상품리뷰 작성 내역 조회 
+
+
+**5. 게시판페이지**
+
+![image](https://github.com/hyeonji817/recypro/assets/75878010/793cb1ae-0247-48f6-b3c0-a215012b0ea3)
+
+- 작성한 게시글들을 목록 
+
+![image](https://github.com/hyeonji817/recypro/assets/75878010/fb9b3719-d5f1-437d-8eb6-6953edb86ed1)
+
+- 작성글의 상세 내용 조회 
+
+![Uploading image.png…]()
+
+- 게시한 작성글 수정 
+
 
 6. 고객센터페이지
 
