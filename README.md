@@ -16,14 +16,17 @@
 - 인기상품 나열
 - 관리자 계정으로 로그인한 페이지일 경우, 관리자 페이지로 이동할 수 있음 
 
+
 2. 계정페이지
 ![image](https://github.com/hyeonji817/recypro/assets/75878010/a2537ba9-2583-4dda-a09c-efe52bdd452c)
 ![image](https://github.com/hyeonji817/recypro/assets/75878010/c8896a5e-24ef-47be-908c-6f4214d91e1e)
 ![image](https://github.com/hyeonji817/recypro/assets/75878010/411b63c7-4efd-492e-a6b1-bde08fcdb623)
 ![image](https://github.com/hyeonji817/recypro/assets/75878010/3a51ba0d-4ebe-4621-8b1a-6179fb4d4803)
+
 - 구성페이지 : 로그인, 회원가입, 아이디찾기, 비밀번호찾기
 - MySQL 데이터베이스 연동
 - 회원가입 처리 시, 회원정보가 DB로 저장 
+
 
 3. 상품페이지
 - 구성페이지 : 상품리스트, 상품상세, 상품리뷰, 상품주문
@@ -40,6 +43,7 @@
 - 상품리뷰 작성할 수 있도록 하는 옵션 구현
 - 주문내역 조회 가능 
 
+
 3) 상품리뷰
 ![image](https://github.com/hyeonji817/recypro/assets/75878010/0699e4f5-1b20-453e-88d0-ccf8cd8cba48)
 - 상품상세 페이지를 통해 볼 수 있음
@@ -47,6 +51,7 @@
 ![image](https://github.com/hyeonji817/recypro/assets/75878010/83fec653-d39c-48e5-bf1b-66829eae29b3)
 - 리뷰를 작성하거나 수정 및 삭제 가능
 - 작성한 리뷰 내용이 DB에 저장되도록 구현 
+
 
 4) 상품주문
 ![image](https://github.com/hyeonji817/recypro/assets/75878010/62d6f32a-377a-4eda-aec8-70b522068d6f)
