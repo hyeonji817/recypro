@@ -18,6 +18,7 @@
 
 
 2. 계정페이지
+
 ![image](https://github.com/hyeonji817/recypro/assets/75878010/a2537ba9-2583-4dda-a09c-efe52bdd452c)
 ![image](https://github.com/hyeonji817/recypro/assets/75878010/c8896a5e-24ef-47be-908c-6f4214d91e1e)
 ![image](https://github.com/hyeonji817/recypro/assets/75878010/411b63c7-4efd-492e-a6b1-bde08fcdb623)
