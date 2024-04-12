@@ -1,0 +1,132 @@
+@charset "UTF-8";
+/** 상품목록 (페이지 제목명) */
+.title {
+	margin-top: 150px;
+	height: 140px;
+}
+
+ul, li {
+	list-style: none;
+}
+
+li:hover {
+	cursor: pointer; 
+}
+
+a:link {
+	color: rgb(53, 53, 53);
+	text-decoration: none;
+}
+
+a:visited {
+    color: rgb(53, 53, 53);
+    text-decoration: none;
+}
+
+/** 상품목록 제목태그 */ 
+.display-3 {
+	margin-top: 50px;
+	color: black;
+	font-weight: 700;
+	position: relative;
+	margin-left: -30%;
+}
+
+/** 상품나열 레이아웃 */ 
+.row {
+	font-size: 26px;
+}
+
+/** 상품목록, 나열상품 */ 
+.container {
+	margin-top: 10px;
+}
+
+/** 상품나열 레이아웃 첫 번째 자식태그 */ 
+#product_list {
+	width: 1500px;
+	height: 1270px;
+	margin: 0 auto;
+}
+
+/** 상품나열 레이아웃 두 번째 자손태그 */ 
+#product_lists {
+	width: 400px;
+	height: 500px;
+	right: 17%;
+	position: relative;
+	margin-bottom: 4%;
+}
+
+/** 상품 설명 */ 
+.sub_explain {
+	color: black !important;
+	margin-right: -25% !important;
+	width: 330px !important;
+	height: 450px !important; 
+}
+
+/** 상품 이미지 */ 
+.sub_explain img {
+	width: 280px !important;
+	border-radius: 30px;
+}
+
+/** 상품 상세설명 */ 
+.sub_explain p {
+	width: 280px !important;
+	height: 70px !important;
+	position: static !important;
+	margin-top: -2% !important;
+	text-align: left !important;
+}
+
+/** 상세정보 버튼 */ 
+.sub {
+	float: left !important;
+	margin-bottom: 10% !important;
+	margin-left: 18% !important;
+	position: absolute !important;
+}
+
+/** 상품명 */ 
+.sub_explain h2 {
+	margin-top: 20px !important;
+	font-size: 22px !important;
+	font-weight: bold !important;
+	margin-bottom: 30px !important;
+	width: 300px !important;
+}
+
+/** 상품 설명 */ 
+.sub_explain h5 {
+	font-size: 16px;
+	top: 5%;
+	font-weight: 700;
+	position: relative;
+}
+
+/** 상품가격 레이아웃 */ 
+.sub_menu a {
+	margin-top: 5%;
+	font-weight: 700;
+	position: relative;
+}
+
+/** 가격표시 */ 
+h6 {
+	top: 2%;
+	width: 100px;
+	font-size: 10px;
+	float: right;
+	margin-right: -5%;
+	position: relative;
+}
+
+/** 상세정보 버튼 버튼색상 */ 
+.btn btn-light {
+	text-shadow: none;
+	font-weight: 700;
+}
+
+	

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>욕실 상세페이지</title>
+</head>
+<body>
+	<div id="result">
+		<div class="result_content">
+			<div class="allproduct_top">
+				<h3>욕실</h3>
+				<div class="allproduct_slide">
+					<ul class="allproduct_slide_ul">
+						<li class="allproduct_slide_ul_li">
+							<a href="../03_shop/soap.jsp"><img src="../img/3-1_minimum.jpg"/></a>
+						가치숍 비누</li>
+						<li class="allproduct_slide_ul_li">
+							<a href="#"><img src="../img/soapbag-2_minimum.jpg"/></a>
+						비누 그물망</li>
+						<!-- 주소좌표 : https://smartstore.naver.com/safeplanet1/products/5439769274 -->
+						<li class="allproduct_slide_ul_li">
+							<a href="#"><img src="../img/towel_minimum.png"/></a>
+						강화 소창 수건</li>
+						<!-- 주소좌표 : https://smartstore.naver.com/safeplanet1/products/5523865319 -->
+					</ul>
+				</div>
+			</div>
+			<div class="allproduct_product">
+				<ul class="allproduct_product_ul">
+					<li class="allproduct_product_ul_li">
+						<input type="checkbox" id="chk_heart1" class="chk_heart" style="display: none;"/>
+						<label class="heart" for="chk_heart1"></label>
+						<a href="#">
+							<img class="product_img" src="../img/3-1.jpg" />
+							
+							<strong class="product_a">가치솝</strong>
+							<span class="product_txt">가치솝 유기농 설거지 비누</span>
+							
+							<span class="money">
+								<span class="money_won">₩</span>
+								<span class="money_won2">3,000</span>
+						    </span>
+							<!-- <span class="starbox">
+								<span class="star"></span>
+								<span class="star"></span>
+								<span class="star"></span>
+								<span class="star"></span>
+								<span class="hrefstar"></span>
+							</span> -->
+						</a>			
+						<a href="cart.jsp" class="addcart"></a>
+					</li>
+					
+					<li class="allproduct_product_ul_li">
+						<input type="checkbox" id="chk_heart2" class="chk_heart" style="display: none;"/>
+						<label class="heart" for="chk_heart2"></label>
+						<a href="#">
+							<img  class="product_img" src="../img/soapbag-2.jpg" />
+							
+							<strong class="product_a">비누 그물망</strong>
+							<span class="product_txt">면 비누망 1장 천연 비누 거품망 그물망</span>
+							
+							<span class="money">
+								<span class="money_won">₩</span>
+								<span class="money_won2">2,300</span>
+						    </span>
+							<!-- <span class="starbox">
+								<span class="star"></span>
+								<span class="star"></span>
+								<span class="star"></span>
+								<span class="star"></span>
+								<span class="nullstar"></span>
+							</span> -->
+						</a>			
+						<a class="addcart"></a>
+					</li>
+					
+					<li class="allproduct_product_ul_li">
+						<input type="checkbox" id="chk_heart3" class="chk_heart" style="display: none;"/>
+						<label class="heart" for="chk_heart3"></label>
+						<a href="#">
+							<img  class="product_img" src="../img/towel.png" />
+							<strong class="product_a">강화 소창 수건</strong>
+							<span class="product_txt">강화 소창 수건 3겹 먼지 안 나는 무형광</span>
+							<span class="money">
+								<span class="money_won">₩</span>
+								<span class="money_won2">5,900</span>
+						    </span>
+							<!-- <span class="starbox">
+								<span class="star"></span>
+								<span class="star"></span>
+								<span class="star"></span>
+								<span class="star"></span>
+								<span class="nullstar"></span>
+							</span> -->
+						</a>			
+						<a class="addcart"></a>
+					</li>
+					<!-- 구분선 -->
+				</ul>
+			</div> <!-- allproduct_product -->
+		</div>
+	</div><!-- result -->
+	
+	<script>
+		$(".addcart").click(function() {
+			alert('장바구니에 추가 완료 되었습니다.')
+		});
+	</script>
+</body>
+</html>

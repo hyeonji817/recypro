@@ -1,0 +1,117 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces="true"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>서브메뉴</title>
+<!-- CSS static -->
+<link rel="stylesheet" type="text/css" href="../css/index.css">
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+<script src="https://kit.fontawesome.com/75e53ee709.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="../css/index.css">
+<style>
+	.nav-right a {
+		font-weight: 700;
+		position: relative;
+	}
+	
+	.submenu a {
+		font-weight: 700;
+		position: relative;
+	}
+	
+	.music {
+		width: 100%;
+		height: 35%;
+		float: right;
+		position: relative;
+		top: 35%;
+		right: 22%;
+	}
+</style>
+</head>
+<body>
+	<div class="wrapper"></div>
+    <!-- navbar -->
+    <header>
+        <div class="nav">
+            <a class="logo" href="../01_main/loginOK.jsp">리싸이프로</a>
+            <!-- <span class="music">
+            	<audio src="../media/music.mp3" controls autoplay loop style="width: 25%; height: 100%; right: 10%;">
+            		음악듣기
+            	</audio>
+            </span> -->
+            <ul class="nav-right">
+                <li>
+                    <a class="link" href="../03_shop/Products.jsp">상품</a>
+                    <!-- <ul class="submenu">
+                    	<li>
+                    		<a class="link" href="../03_shop/Products.jsp">상품 목록</a>
+                    	</li>
+                    	<li>
+                    		<a class="link" href="../03_shop/pd_orderList.jsp">주문 조회</a>
+                    	</li>
+                    	<li>
+                    		<a class="link" href="../03_shop/Product_Review.jsp">리뷰확인</a>
+                    	</li>
+                    </ul> -->
+                </li>
+                <li>
+                    <a class="link" href="../05_review/review.jsp">게시판</a>
+                    <ul class="submenu">
+                    	<li>
+                    		<a class="link" href="../05_review/review.jsp">목록</a>
+                    	</li>
+                    	<li>
+                    		<a class="link" href="../05_review/write.jsp">글쓰기</a>
+                    	</li>
+                    </ul>
+                </li>
+                <li>
+                	<a class="link" href="../06_customer/customer_main.jsp">고객센터</a>
+                	<ul class="submenu">
+                		<li>
+                			<a class="link" href="../06_customer/customer_notice.jsp">공지사항</a>
+                		</li>
+                		<li>
+                			<a class="link" href="../06_customer/customer_policy.jsp">운영정책</a>
+                		</li>
+                		<li>
+                			<a class="link" href="../06_customer/customer_question.jsp">자주묻는질문</a> 
+                		</li>
+                		<li>
+                			<a class="link" href="../06_customer/customer_consult.jsp">온라인 문의</a>
+                		</li>
+                		<li>
+                			<a class="link" href="../06_customer/customer_declare.jsp">신고하기</a>
+                		</li>
+                	</ul>
+                </li>
+                <li>
+                	<img src="../img/user.png" width="30" height="30" alt="logo" class="user-img">
+                	<!-- 옆에 아이디명이나 닉네임명을 구현해야 하는데 어케 하지... -->
+                    <ul class="submenu">
+                    	<li>
+                            <a class="link" href="../03_shop/cart.jsp">장바구니</a>
+                        </li>
+                        <li>
+                            <a class="link" href="../04_mypage/mypage.jsp">마이페이지</a>
+                        </li>
+                        <li>
+                            <a class="link" href="../02_account/logoutAction.jsp">로그아웃</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+       </div>
+       </header>
+</body>
+</html>
